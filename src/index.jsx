@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import { HashRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import { Loading } from './components/shared/loading/Loading';
@@ -15,6 +15,7 @@ import './index.css';
 const Main = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const routes = [
 		{
@@ -39,7 +40,7 @@ const Main = () => {
 		const listen = onAuthStateChanged(auth, (user) => {
 			if (user) {
 				navigate('/game');
-			} else if (window.location.pathname !== '/forgot-password') {
+			} else if (location.pathname !== '/forgot-password') {
 				navigate('/auth');
 			}
 		});
