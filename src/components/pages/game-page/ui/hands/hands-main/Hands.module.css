@@ -1,0 +1,66 @@
+.hands h2 {
+	text-align: center;
+}
+
+.hands ul li {
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: -webkit-transform 0.2s;
+	-o-transition: transform 0.2s;
+	transition: transform 0.2s;
+	transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+/*------------------------------------ 319.98px ---------------------*/
+@media (min-width: 319.98px) {
+	.hands {
+		-ms-grid-row-align: center;
+		    align-self: center;
+    grid-area: Hands;
+		cursor: pointer;
+	}
+	.hands h2 {
+		margin-bottom: 0.5rem;
+		font-size: 1.4rem;
+	}
+}
+
+/*------------------------------------ 359.98px ---------------------*/
+@media (min-width: 359.98px) {
+	.hands h2 {
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+}
+
+/*------------------------------------ 427.98px ---------------------*/
+@media (min-width: 427.98px) {
+	.hands h2 {
+		margin-bottom: 1.3rem;
+		font-size: 1.7rem;
+	}
+}
+
+/*------------------------------------ 575.98px ---------------------*/
+@media (min-width: 575.98px) {
+	.hands h2 {
+		margin-bottom: 2rem;
+		font-size: 2.2rem;
+	}
+}
+/*------------------------------------ 991.98px ---------------------*/
+@media (min-width: 991.98px) {
+	.hands ul li:hover {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+		z-index: 1;
+	}
+}
+
+/*------------------------------------ 1199.98px ---------------------*/
+@media (min-width: 1199.98px) {
+	.hands h2 {
+		margin-bottom: 1rem;
+		font-size: 2rem;
+	}
+}

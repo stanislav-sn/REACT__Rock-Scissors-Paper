@@ -1,0 +1,243 @@
+@-webkit-keyframes shake {
+	0%,
+	100% {
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+	}
+	10%,
+	30%,
+	50%,
+	70% {
+		-webkit-transform: translate(-2px, 0);
+		-ms-transform: translate(-2px, 0);
+		transform: translate(-2px, 0);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		-webkit-transform: translate(2px, 0);
+		-ms-transform: translate(2px, 0);
+		transform: translate(2px, 0);
+	}
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+	}
+	10%,
+	30%,
+	50%,
+	70% {
+		-webkit-transform: translate(-2px, 0);
+		-ms-transform: translate(-2px, 0);
+		transform: translate(-2px, 0);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		-webkit-transform: translate(2px, 0);
+		-ms-transform: translate(2px, 0);
+		transform: translate(2px, 0);
+	}
+}
+
+.form {
+	margin-top: 0.3rem;
+}
+
+.form h2 {
+	margin-top: 1.6rem;
+	font-size: 3rem;
+}
+
+.inputBox input {
+	-webkit-border-radius: 10px;
+	        border-radius: 10px;
+	font-family: var(--font-lowercase);
+	font-size: 1.2rem;
+	padding: 0 0.6rem;
+	position: relative;
+}
+
+.inputError {
+	position: absolute;
+	-webkit-animation: shake 0.3s ease-in-out;
+	animation: shake 0.3s ease-in-out;
+	border: 2px solid var(--error-color) !important;
+}
+
+.errorMessage {
+	color: var(--error-color);
+	text-transform: none;
+	position: absolute;
+	font-family: var(--font-lowercase);
+}
+
+.form button span {
+	font-size: 1rem;
+	color: var(--text-color);
+	margin-top: 15px;
+}
+
+/*------------------------------------ 319.98px  -------------------*/
+@media (min-width: 319.98px) {
+	.signContainer h2 {
+		font-size: 1.6rem;
+		margin-bottom: 0.1rem;
+	}
+	.signContainer span {
+		font-size: 1.3rem;
+	}
+	.form {
+		margin-top: 0;
+	}
+	.inputBox {
+		position: relative;
+		width: 16rem;
+		height: 3.8rem;
+	}
+	.inputBox input {
+		font-size: 1rem;
+		width: 100%;
+		height: 2.6rem;
+	}
+	.togglePasswordIcon {
+		position: relative;
+		bottom: 2.1rem;
+		left: 13.6rem;
+		width: 1.6rem;
+	}
+	.errorMessage {
+		top: 2.6rem;
+		left: -0.01rem;
+		font-size: 0.89rem;
+	}
+	.forgotPassword {
+		text-transform: none;
+		color: var(--text-color);
+		font-size: 1.2rem;
+		letter-spacing: 0.03rem;
+	}
+	.form button[type='submit'] {
+		width: 9rem;
+		height: 2.6rem;
+		font-size: 1.4rem;
+		margin-top: 0.7rem;
+	}
+}
+
+/*------------------------------------ 359.98 ---------------------*/
+@media (min-width: 359.98px) {
+	.signContainer h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	.signContainer span {
+		margin: 0.3rem 0;
+	}
+	.forgotPassword {
+		font-size: 1.3rem;
+	}
+	.inputBox {
+		height: 4.5rem;
+		width: 18rem;
+	}
+	.inputBox input {
+		font-size: 1.15rem;
+		height: 3.2rem;
+	}
+	.togglePasswordIcon {
+		left: 15.4rem;
+		bottom: 2.35rem;
+	}
+	.errorMessage {
+		top: 3.2rem;
+		left: 0.2rem;
+		font-size: 0.97rem;
+	}
+	.form button[type='submit'] {
+		margin-top: 1.4rem;
+		height: 3.2rem;
+		font-size: 1.55rem;
+	}
+}
+
+/*------------------------------------ 427.98px ---------------------*/
+@media (min-width: 427.98px) {
+	.signContainer h2 {
+		font-size: 2rem;
+		margin-bottom: 0.8rem;
+	}
+	.signContainer span {
+		margin: 0.7rem 0;
+	}
+	.inputBox {
+		height: 4.7rem;
+		width: 19rem;
+	}
+	.inputBox input {
+		height: 3.3rem;
+		font-size: 1.23rem;
+	}
+	.togglePasswordIcon {
+		left: 16.2rem;
+    bottom: 2.5rem;
+		width: 1.9rem;
+	}
+	.errorMessage {
+		top: 3.23rem;
+		font-size: 1.04rem;
+	}
+	.forgotPassword {
+		font-size: 1.35rem;
+	}
+}
+
+/*------------------------------------ 767.98px ---------------------*/
+@media (min-width: 767.98px) {
+	.signContainer h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+	.signContainer span {
+		font-size: 1.7rem;
+	}
+	.errorMessage {
+		top: 3.3rem;
+		left: 0.1rem;
+	}
+	.forgotPassword {
+		font-size: 1.4rem;
+	}
+	.form button[type='submit'] {
+		margin-top: 1.5rem;
+		font-size: 1.7rem;
+	}
+}
+
+/*------------------------------------ 991.98px ---------------------*/
+@media (min-width: 991.98px) {
+	.signContainer h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	.signContainer span {
+		font-size: 1.5rem;
+	}
+	.forgotPassword {
+		margin-bottom: 0.5rem;
+	}
+	.form button[type='submit'] {
+		width: 8.6rem;
+		height: 3.1rem;
+		font-size: 1.6rem;
+		margin-top: 1rem;
+	}
+}

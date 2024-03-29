@@ -1,0 +1,253 @@
+@-webkit-keyframes slideDown {
+	0% {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+}
+
+.modal {
+	position: absolute;
+	z-index: 9999;
+	background-color: var(--theme);
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	-webkit-animation: slideDown 0.5s ease-out forwards;
+	animation: slideDown 0.5s ease-out forwards;
+	cursor: default;
+}
+
+.container {
+	padding: 1rem;
+	overflow-y: auto;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+}
+
+.icon {
+	position: absolute;
+}
+
+.container h1 {
+	text-align: center;
+}
+
+.container h2 {
+	text-align: center;
+}
+
+.closing {
+	-webkit-animation: slideUp 0.5s ease-in forwards;
+	animation: slideUp 0.5s ease-in forwards;
+}
+
+/*----------------- 319.98px  -------------------*/
+@media (min-width: 319.98px) {
+	.btn {
+		width: 6rem;
+		margin: 0 0.5rem;
+	}
+	.modal {
+		top: 2%;
+		left: 2%;
+		right: 2%;
+		bottom: 2%;
+	}
+	.icon {
+		right: 0.3rem;
+		top: 0.3rem;
+		width: 2rem;
+		height: 2rem;
+	}
+	.container {
+		max-height: 100%;
+	}
+	.container h1 {
+		font-size: 1.8rem;
+		margin-top: 1.6rem;
+		line-height: 1;
+	}
+	.container h2 {
+		font-size: 1.5rem;
+		margin-top: 0.7rem;
+	}
+	.container ol > li:first-child {
+		margin-top: 0;
+	}
+	.container ol > li {
+		margin: 0.5rem 0 0 1rem;
+	}
+	.container ul li {
+		margin-left: 0.5rem;
+	}
+	.container ol > li::marker {
+		font-size: 1.3rem;
+	}
+	.container ol li span {
+		font-size: 1.3rem;
+	}
+	.container li ul li {
+		font-size: 1.2rem;
+		letter-spacing: 0.03rem;
+	}
+}
+
+/*----------------- 359.98  ---------------------*/
+@media (min-width: 359.98px) {
+	.container h2 {
+		font-size: 1.6rem;
+	}
+	.container ol > li::marker {
+		font-size: 1.5rem;
+	}
+	.container ol li span {
+		font-size: 1.5rem;
+	}
+	.container li ul li {
+		font-size: 1.3rem;
+	}
+}
+
+/*----------------- 427.98px  ---------------------*/
+@media (min-width: 427.98px) {
+	.btn {
+		width: 7rem;
+		margin: 0 0.8rem;
+	}
+	.container ol > li {
+		margin: 0.5rem 0 0 1.3rem;
+	}
+	.container h1 {
+		font-size: 2.4rem;
+		margin-top: 1.8rem;
+	}
+	.container h2 {
+		font-size: 2rem;
+	}
+	.container ol > li::marker {
+		font-size: 1.8rem;
+	}
+	.container ol li span {
+		font-size: 1.8rem;
+	}
+	.container li ul li {
+		font-size: 1.5rem;
+	}
+}
+
+/*----------------- 575.98px  ---------------------*/
+@media (min-width: 575.98px) {
+	.btn {
+		width: 7.5rem;
+		margin: 0 1.2rem;
+	}
+	.modal {
+		top: 5%;
+		left: 5%;
+		right: 5%;
+		bottom: 5%;
+	}
+	.icon {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+	.container h1 {
+		font-size: 3rem;
+		margin-top: 2.5rem;
+	}
+	.container ol > li {
+		margin-left: 1.6rem;
+	}
+}
+
+/*----------------- 767.98px  ---------------------*/
+@media (min-width: 767.98px) {
+	.btn {
+		width: 8.5rem;
+	}
+	.icon {
+		right: 0.8rem;
+		top: 0.8rem;
+		width: 3rem;
+		height: 3rem;
+	}
+	.container h1 {
+		font-size: 3.5rem;
+		margin-top: 3.5rem;
+	}
+	.container h2 {
+		font-size: 2.5rem;
+		margin-top: 1rem;
+	}
+	.container ol > li:first-child {
+		margin-top: 0;
+	}
+	.container ol > li {
+		margin: 0.5rem 0 0 2.2rem;
+	}
+	.container ol > li::marker {
+		font-size: 2.1rem;
+	}
+	.container ol li span {
+		font-size: 2.1rem;
+	}
+	.container li ul li {
+		font-size: 1.8rem;
+	}
+}
+
+/*----------------- 1199.98px  ---------------------*/
+@media (min-width: 1199.98px) {
+	.modal {
+		top: 10%;
+		left: 10%;
+		right: 10%;
+		bottom: 10%;
+	}
+}
+
+/*----------------- 1399.98px  ---------------------*/
+@media (min-width: 1399.98px) {
+	.modal {
+		top: 10%;
+		left: 15%;
+		right: 15%;
+		bottom: 10%;
+	}
+}

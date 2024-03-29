@@ -1,0 +1,61 @@
+.btn {
+	-webkit-border-radius: 10px;
+	        border-radius: 10px;
+	font-family: var(--font-lowercase);
+	font-size: 1.5rem;
+	margin-bottom: 0.1rem;
+}
+
+/*------------------------------------ 319.98px ---------------------*/
+@media (min-width: 319.98px) {
+	.btn {
+		font-size: 1.2rem;
+		height: 2.6rem;
+		width: 16rem;
+	}
+	.icon {
+		width: 1.9rem;
+		margin-right: 0.6rem;
+	}
+}
+
+/*------------------------------------ 359.98px ---------------------*/
+@media (min-width: 359.98px) {
+	.btn {
+		height: 3.2rem;
+		width: 18rem;
+	}
+}
+
+/*------------------------------------ 427.98px ---------------------*/
+@media (min-width: 427.98px) {
+	.btn {
+		width: 19rem;
+		height: 3.3rem;
+		font-size: 1.29rem;
+	}
+}
+
+/*------------------------------------ 767.98px ---------------------*/
+@media (min-width: 767.98px) {
+	.btn {
+		font-size: 1.4rem;
+		height: 3.2rem;
+	}
+	.icon {
+		width: 2.1rem;
+		margin-right: 0.6rem;
+	}
+}
+
+/*------------------------------------ 991.98px ---------------------*/
+@media (min-width: 991.98px) {
+	.btn {
+		font-size: 1.5rem;
+		height: 3.2rem;
+	}
+	.icon {
+		width: 1.9rem;
+		margin-right: 0.6rem;
+	}
+}

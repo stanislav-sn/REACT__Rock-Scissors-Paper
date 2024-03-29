@@ -1,0 +1,158 @@
+@-webkit-keyframes slideDown {
+	from {
+		top: -50%;
+	}
+	to {
+		top: 50%;
+	}
+}
+
+@keyframes slideDown {
+	from {
+		top: -50%;
+	}
+	to {
+		top: 50%;
+	}
+}
+
+@-webkit-keyframes slideUp {
+	from {
+		top: 50%;
+	}
+	to {
+		top: -50%;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		top: 50%;
+	}
+	to {
+		top: -50%;
+	}
+}
+
+.modal {
+	-webkit-animation: slideDown 0.6s ease 0s 1 normal running;
+	        animation: slideDown 0.6s ease 0s 1 normal running;
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	background-color: var(--theme);
+	-webkit-border-radius: 20px;
+	        border-radius: 20px;
+	-webkit-box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+		0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+	        box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+		0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+}
+
+.close {
+	-webkit-animation: slideUp 0.5s ease-in forwards;
+	        animation: slideUp 0.5s ease-in forwards;
+}
+
+.box {
+	margin: 2rem 1rem;
+}
+
+.box p {
+	margin-bottom: 15px;
+}
+
+.player {
+	text-align: center;
+}
+
+/*------------------------------------ 319.98px ---------------------*/
+@media (min-width: 319.98px) {
+	.modal {
+		width: 90vw;
+		height: 20rem;
+		max-width: 18rem;
+		top: 50%;
+		left: 50%;
+		right: 50%;
+		bottom: 50%;
+	}
+	.modal h1 {
+		margin-top: 2rem;
+		font-size: 3rem;
+	}
+	.box {
+		gap: 1rem;
+	}
+	.player p {
+		font-size: 1.8rem;
+	}
+}
+
+/*------------------------------------ 359.98px ---------------------*/
+@media (min-width: 359.98px) {
+	.modal {
+		width: 90vw;
+		height: 22rem;
+		max-width: 24rem;
+	}
+	.player p {
+		font-size: 2.2rem;
+	}
+}
+
+/*------------------------------------ 427.98px ---------------------*/
+@media (min-width: 427.98px) {
+	.modal {
+		width: 90vw;
+		height: 24rem;
+		max-width: 30rem;
+	}
+}
+
+/*----------------------------------- 575.98px ---------------------*/
+@media (min-width: 575.98px) {
+	.modal {
+		width: 70vw;
+		height: 24rem;
+		max-width: 30rem;
+	}
+}
+
+/*------------------------------------ 767.98px ---------------------*/
+@media (min-width: 767.98px) {
+	.modal {
+		width: 70vw;
+		height: 26rem;
+		max-width: 34rem;
+	}
+	.modal h1 {
+		font-size: 3.5rem;
+	}
+	.box {
+		gap: 2rem;
+	}
+	.player p {
+		font-size: 2.4rem;
+	}
+}
+
+/*------------------------------------ 1199.98px ---------------------*/
+@media (min-width: 1199.98px) {
+	.modal {
+		width: 49vw;
+		height: 28rem;
+		max-width: 39rem;
+	}
+	.modal h1 {
+		margin-top: 2.7rem;
+		font-size: 4rem;
+	}
+	.box {
+		gap: 4rem;
+	}
+	.player p {
+		font-size: 2.7rem;
+	}
+}

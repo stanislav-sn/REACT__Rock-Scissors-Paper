@@ -1,0 +1,96 @@
+/*----------------- 319.98px  -------------------*/
+@media (min-width: 319.98px) {
+	.score {
+		width: 6.5rem;
+		margin-left: 0.3rem;
+		grid-area: Score;
+		-ms-grid-row-align: center;
+		    align-self: center;
+	}
+	.title {
+		font-size: 1.9rem;
+	}
+	.quantity {
+		font-size: 1.4rem;
+	}
+	.gamer {
+		margin-right: 0.5rem;
+	}
+	.quantity span {
+		text-align: end;
+		width: 1.8rem;
+	}
+	.reset {
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+}
+
+/*----------------- 359.98  ---------------------*/
+@media (min-width: 359.98px) {
+	.score {
+		width: 7rem;
+	}
+	.title {
+		font-size: 2.1rem;
+	}
+	.quantity {
+		font-size: 1.5rem;
+	}
+}
+
+/*----------------- 427.98px  ---------------------*/
+@media (min-width: 427.98px) {
+	.title {
+		font-size: 2rem;
+	}
+	.quantity {
+		font-size: 1.5rem;
+	}
+}
+
+/*----------------- 575.98px  ---------------------*/
+@media (min-width: 575.98px) {
+	.score {
+		width: 8rem;
+	}
+	.title {
+		font-size: 2.2rem;
+	}
+	.quantity {
+		font-size: 1.6rem;
+	}
+	.quantity span {
+		width: 2rem;
+	}
+}
+
+/*----------------- 767.98px  ---------------------*/
+@media (min-width: 767.98px) {
+	.score {
+		width: 9.5rem;
+	}
+	.title {
+		font-size: 2.6rem;
+	}
+	.quantity {
+		font-size: 2rem;
+	}
+	.quantity span {
+		width: 2.2rem;
+	}
+}
+
+/*----------------- 1199.98px  ---------------------*/
+@media (min-width: 1199.98px) {
+	.score {
+		margin: 2.7rem 0 0 0.4rem;
+	}
+}
+
+/*----------------- 1399.98px  ---------------------*/
+@media (min-width: 1399.98px) {
+	.score {
+		margin: 2rem 0 0 0.4rem;
+	}
+}

@@ -1,0 +1,356 @@
+@font-face {
+	font-family: 'Bebas Neue Pro';
+	font-style: normal;
+	font-weight: 500;
+	src: url('./fonts/bebasneuepro-bold.woff2') format('woff2');
+}
+
+:root {
+	/* colors */
+	--theme: #ffea00;
+	--light-theme-button-hover: #ffffff;
+	--dark-theme-button-hover: #a8a8a89c;
+	--overlay: rgba(0, 0, 0, 0.7);
+	--text-color: rgb(0, 0, 0);
+	--btn-color-hover: rgb(0, 0, 0);
+	--text-color-hover: #ffffff;
+	--error-color: rgb(255, 0, 0);
+	--border-color: rgb(0, 0, 0);
+
+	/* fonts */
+	--font-uppercase: 'Bebas Neue Pro';
+	--font-lowercase: 'Poppins', sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+* {
+	/* This is “tap highlight color” and is standard behavior in mobile browsers to indicate that an element has been tapped. This setting disables it. */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*----------------------------------------- hide scrollbar ------------------- */
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent; /* hide scrollbar for Firefox */
+}
+
+* {
+	-ms-overflow-style: none; /* hide scrollbar for Microsoft Edge и IE */
+}
+
+::-webkit-scrollbar {
+	display: none; /* hide scrollbar for WebKit (Chrome, Safari) */
+}
+/*----------------------------------------- /hide scrollbar ------------------- */
+
+body {
+	background-color: var(--theme);
+	font-family: var(--font-uppercase);
+	text-transform: uppercase;
+}
+
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+ul,
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img,
+svg {
+	width: 100%;
+	height: auto;
+}
+
+address {
+	font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button,
+input[type='submit'] {
+	display: inline-block;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: transparent;
+	background: none;
+	cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+	outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+h1 {
+	line-height: normal;
+	text-align: center;
+}
+
+.container {
+	height: 100vh;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-rows: auto 1fr;
+	grid-template-rows: auto 1fr;
+	justify-items: center;
+}
+
+.border {
+	border: 2px solid var(--border-color);
+}
+
+.flexSpaceBetween {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.flexHorizontalCentered {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.flexVerticalCentered {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.flexVerticalCenteredColumn {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+.flexAllCentered {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.flexAllCenteredColumn {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--overlay);
+	z-index: 9999;
+	margin-right: 0;
+	cursor: pointer;
+}
+
+.dark {
+	--theme: #404040;
+}
+
+.game {
+	width: 100%;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr;
+	grid-template-columns: 1fr;
+	-ms-grid-rows: 0.7fr 1fr;
+	grid-template-rows: 0.7fr 1fr;
+	    grid-template-areas:
+		'Score . .'
+		'Hands Hands Hands';
+}
+
+/*----------------------------------- 319.98px -------------------*/
+@media (min-width: 319.98px) {
+	.container {
+		width: 100%;
+		max-width: 30rem;
+		padding: 0 0.5rem;
+	}
+	.appButtons {
+		font-size: 1.2rem;
+		height: 2.3rem;
+		-webkit-border-radius: 10px;
+		        border-radius: 10px;
+		text-transform: uppercase;
+		-webkit-transition: 0.3s ease;
+		-o-transition: 0.3s ease;
+		transition: 0.3s ease;
+	}
+	.appButtons:hover {
+		color: var(--text-color-hover);
+		background-color: var(--btn-color-hover);
+	}
+}
+
+/*----------------------------------- 427.98px ---------------------*/
+@media (min-width: 427.98px) {
+	.container {
+		max-width: 34rem;
+		padding: 0 1.25rem;
+	}
+	.appButtons {
+		font-size: 1.2rem;
+		height: 2.3rem;
+	}
+}
+
+/*----------------------------------- 575.98px ---------------------*/
+@media (min-width: 575.98px) {
+	.container {
+		max-width: 42.5rem;
+	}
+	.appButtons {
+		font-size: 1.3rem;
+		height: 2.5rem;
+		width: 7.8rem;
+	}
+}
+
+/*----------------------------------- 767.98px ---------------------*/
+@media (min-width: 767.98px) {
+	.container {
+		width: 90vw;
+		max-width: 46.9rem;
+	}
+	.appButtons {
+		font-size: 1.6rem;
+		height: 3rem;
+	}
+}
+
+/*----------------------------------- 991.98px ---------------------*/
+@media (min-width: 991.98px) {
+	.container {
+		max-width: 49.4rem;
+	}
+}
+
+/*----------------------------------- 1199.98px ---------------------*/
+@media (min-width: 1199.98px) {
+	.container {
+		max-width: 53.1rem;
+	}
+}

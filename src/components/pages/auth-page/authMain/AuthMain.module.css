@@ -1,0 +1,102 @@
+@-webkit-keyframes animation {
+	from {
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	to {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@keyframes animation {
+	from {
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	to {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+.wrapper {
+	animation: animation 0.4s ease-out;
+	-webkit-animation: animation 0.4s ease-out;
+}
+
+.handle {
+	margin-top: 1rem;
+	font-size: 1.3rem;
+}
+
+.handle p {
+	text-transform: none;
+}
+
+.handle button {
+	font-size: 1.4rem;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+.divider {
+	margin: 0 2rem;
+}
+.bar {
+	background-color: var(--text-color);
+	width: 0.25rem;
+	height: 50%;
+}
+.divider span {
+	font-size: 1.5rem;
+	padding: 1rem;
+}
+
+/*----------------------------------- 319.98px -------------------*/
+@media (min-width: 319.98px) {
+	.auth {
+		margin-top: 0.8rem;
+	}
+	.mobileView {
+		margin-top: 0.6rem;
+	}
+	.handle {
+		margin-top: 0.6rem;
+	}
+	.handle > button {
+		margin-top: 0.15rem;
+	}
+}
+
+/*----------------------------------- 359.98px ---------------------*/
+@media (min-width: 359.98px) {
+	.auth {
+		margin-top: 1.5rem;
+	}
+	.handle {
+		margin-top: 1.3rem;
+	}
+}
+
+/*----------------------------------- 427.98px ---------------------*/
+@media (min-width: 427.98px) {
+	.handle {
+		margin-top: 1.5rem;
+		font-size: 1.4rem;
+	}
+	.handle > button {
+		font-size: 1.5rem;
+	}
+}
+
+/*----------------------------------- 767.98px ---------------------*/
+@media (min-width: 767.98px) {
+	.handle {
+		margin-top: 1.5rem;
+		font-size: 1.5rem;
+	}
+	.handle > button {
+		font-size: 1.6rem;
+	}
+}

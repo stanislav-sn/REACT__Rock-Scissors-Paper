@@ -1,0 +1,69 @@
+@-webkit-keyframes show-up {
+	from, 0% {
+		opacity: 0;
+	}
+	to, 100% {
+		opacity: 1;
+	}
+}
+
+@keyframes show-up {
+	from, 0% {
+		opacity: 0;
+	}
+	to, 100% {
+		opacity: 1;
+	}
+}
+
+/*------------------------------------- 319.98px -------------------*/
+@media (min-width: 319.98px) {
+	.buttons {
+		-webkit-box-pack: end;
+		-webkit-justify-content: end;
+		    -ms-flex-pack: end;
+		        justify-content: end;
+		padding: 0.4rem 0;
+	}
+	.header > h1 {
+		-webkit-animation: show-up 1s ease-in-out;
+		        animation: show-up 1s ease-in-out;
+		font-size: 2.4rem;
+		line-height: 0.75;
+	}
+}
+
+/*------------------------------------- 359.98px --------------------*/
+@media (min-width: 359.98px) {
+	.header {
+		width: 100%;
+	}
+	.buttons {
+		padding: 0.8rem 0 1rem;
+	}
+	.header > h1 {
+		font-size: 2.6rem;
+		/* margin-top: 1rem; */
+	}
+}
+
+/*------------------------------------- 427.98px ---------------------*/
+@media (min-width: 427.98px) {
+	.header > h1 {
+		font-size: 3rem;
+	}
+}
+
+/*------------------------------------- 575.98px ---------------------*/
+@media (min-width: 575.98px) {
+	.header > h1 {
+		font-size: 3.7rem;
+	}
+}
+
+/*------------------------------------- 767.98px ---------------------*/
+@media (min-width: 767.98px) {
+	.header > h1 {
+		font-size: 4rem;
+	}
+}
