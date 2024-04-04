@@ -1,17 +1,21 @@
 @-webkit-keyframes show-up {
-	from, 0% {
+	from,
+	0% {
 		opacity: 0;
 	}
-	to, 100% {
+	to,
+	100% {
 		opacity: 1;
 	}
 }
 
 @keyframes show-up {
-	from, 0% {
+	from,
+	0% {
 		opacity: 0;
 	}
-	to, 100% {
+	to,
+	100% {
 		opacity: 1;
 	}
 }
@@ -21,13 +25,16 @@
 	.buttons {
 		-webkit-box-pack: end;
 		-webkit-justify-content: end;
-		    -ms-flex-pack: end;
-		        justify-content: end;
-		padding: 0.4rem 0;
+		-ms-flex-pack: end;
+		justify-content: end;
+		padding: 0.4rem 0.1rem;
+	}
+	html[lang='ru'] .header > h1 {
+		font-size: 1.82rem;
 	}
 	.header > h1 {
 		-webkit-animation: show-up 1s ease-in-out;
-		        animation: show-up 1s ease-in-out;
+		animation: show-up 1s ease-in-out;
 		font-size: 2.4rem;
 		line-height: 0.75;
 	}
@@ -41,6 +48,9 @@
 	.buttons {
 		padding: 0.8rem 0 1rem;
 	}
+	html[lang='ru'] .header > h1 {
+		font-size: 2.1rem;
+	}
 	.header > h1 {
 		font-size: 2.6rem;
 		/* margin-top: 1rem; */
@@ -49,20 +59,19 @@
 
 /*------------------------------------- 427.98px ---------------------*/
 @media (min-width: 427.98px) {
-	.header > h1 {
-		font-size: 3rem;
+	html[lang='ru'] .header > h1 {
+		font-size: 2.39rem;
 	}
-}
-
-/*------------------------------------- 575.98px ---------------------*/
-@media (min-width: 575.98px) {
 	.header > h1 {
-		font-size: 3.7rem;
+		font-size: 2.95rem;
 	}
 }
 
 /*------------------------------------- 767.98px ---------------------*/
 @media (min-width: 767.98px) {
+	html[lang='ru'] .header > h1 {
+		font-size: 3.7rem;
+	}
 	.header > h1 {
 		font-size: 4rem;
 	}

@@ -38,15 +38,18 @@
 		margin-bottom: 1.3rem;
 		font-size: 1.7rem;
 	}
-}
-
-/*------------------------------------ 575.98px ---------------------*/
-@media (min-width: 575.98px) {
-	.hands h2 {
-		margin-bottom: 2rem;
-		font-size: 2.2rem;
+	.hands ul {
+		gap: 0.8rem;
 	}
 }
+
+/*------------------------------------ 767.98px ---------------------*/
+@media (min-width: 767.98px) {
+	.hands ul {
+		gap: 1.5rem;
+	}
+}
+
 /*------------------------------------ 991.98px ---------------------*/
 @media (min-width: 991.98px) {
 	.hands ul li:hover {

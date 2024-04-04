@@ -37,21 +37,15 @@ export const Modal = memo((props) => {
 		isOpen && (
 			<div className="overlay" onClick={handleClose}>
 				<div
-					className={`${styles.modal} ${
-						isClosing && styles.close
-					} flexVerticalCenteredColumn border`}
+					className={`${styles.modal} ${isClosing && styles.close} border`}
 					onClick={handleClose}
 				>
 					<h1>{result}</h1>
-					<div className={`${styles.box} flexSpaceBetween`}>
-						<div className={styles.player}>
-							<p>{userName}</p>
-							<img src={userIcon} alt=""></img>
-						</div>
-						<div className={styles.player}>
-							<p>Computer</p>
-							<img src={computerIcon} alt=""></img>
-						</div>
+					<div className={`${styles.box}`}>
+						<p className={styles.userName}>{userName}</p>
+						<img className={styles.userChoice} src={userIcon} alt=""></img>
+						<p className={styles.computerName}>Computer</p>
+						<img className={styles.computerChoice} src={computerIcon} alt=""></img>
 					</div>
 				</div>
 			</div>

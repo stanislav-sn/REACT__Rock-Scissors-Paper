@@ -49,7 +49,7 @@ const Main = () => {
 			clearTimeout(timerLoading);
 			listen();
 		};
-	}, [navigate]);
+	}, [location.pathname, navigate]);
 
 	return (
 		<>

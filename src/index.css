@@ -174,8 +174,8 @@ h1 {
 	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 
 .flexHorizontalCentered {
@@ -185,8 +185,8 @@ h1 {
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 }
 
 .flexVerticalCentered {
@@ -196,8 +196,8 @@ h1 {
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .flexVerticalCenteredColumn {
@@ -207,13 +207,13 @@ h1 {
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 
 .flexAllCentered {
@@ -223,12 +223,12 @@ h1 {
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .flexAllCenteredColumn {
@@ -239,16 +239,16 @@ h1 {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .overlay {
@@ -277,7 +277,7 @@ h1 {
 	grid-template-columns: 1fr;
 	-ms-grid-rows: 0.7fr 1fr;
 	grid-template-rows: 0.7fr 1fr;
-	    grid-template-areas:
+	grid-template-areas:
 		'Score . .'
 		'Hands Hands Hands';
 }
@@ -291,9 +291,10 @@ h1 {
 	}
 	.appButtons {
 		font-size: 1.2rem;
-		height: 2.3rem;
+		width: auto;
+		height: 2.35rem;
 		-webkit-border-radius: 10px;
-		        border-radius: 10px;
+		border-radius: 10px;
 		text-transform: uppercase;
 		-webkit-transition: 0.3s ease;
 		-o-transition: 0.3s ease;
@@ -313,19 +314,6 @@ h1 {
 	}
 	.appButtons {
 		font-size: 1.2rem;
-		height: 2.3rem;
-	}
-}
-
-/*----------------------------------- 575.98px ---------------------*/
-@media (min-width: 575.98px) {
-	.container {
-		max-width: 42.5rem;
-	}
-	.appButtons {
-		font-size: 1.3rem;
-		height: 2.5rem;
-		width: 7.8rem;
 	}
 }
 
@@ -337,7 +325,7 @@ h1 {
 	}
 	.appButtons {
 		font-size: 1.6rem;
-		height: 3rem;
+		height: 3.1rem;
 	}
 }
 
