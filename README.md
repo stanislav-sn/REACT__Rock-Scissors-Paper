@@ -1,5 +1,5 @@
-![RSP-auth](https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/700cf08c-707b-4615-83e4-95d1bc88bce3)
-![RSP-game](https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/846b1d6e-9069-4fed-88d9-e01513234d6c)
+![RSP-auth](https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/ca379dc1-ef6c-422e-921f-32b67e64e096)
+![RSP-game](https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/40f1ee15-a1ee-454e-8f9e-fc5a59aa0433)
 
 # React - Rock-Scissors-Paper
 
