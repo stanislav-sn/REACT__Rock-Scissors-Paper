@@ -1,5 +1,4 @@
-![RSP-auth](https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/ca379dc1-ef6c-422e-921f-32b67e64e096)
-![RSP-game](https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/40f1ee15-a1ee-454e-8f9e-fc5a59aa0433)
+<img width="50%" alt="RSP-game" src="https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/f53065ec-5843-4acc-b35a-b874b2a0ba2a" />
 
 # React - Rock-Scissors-Paper
 
