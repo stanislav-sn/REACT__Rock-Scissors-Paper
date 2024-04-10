@@ -8,18 +8,17 @@ import '../../../../../index.css';
 import styles from './Score.module.css';
 
 export const Score = () => {
-	const [username, setUsername] = useState(null);
-	const [userScore, setUserScore] = useState(0);
-	const [computerScore, setComputerScore] = useState(0);
-
+	const [data, setData] = useState({
+		userName: '',
+		userScore: 0,
+		compScore: 0,
+	});
+	
+	const { userName, userScore, computerScore } = data;
 	const currentUser = auth.currentUser;
 	const userDataRef = useFetchUser(currentUser);
 
-	useFetchUserProps(
-		currentUser,
-		['userName', 'userScore', 'compScore'],
-		[setUsername, setUserScore, setComputerScore]
-	);
+	useFetchUserProps(currentUser, setData);
 
 	const handleReset = useCallback(async () => {
 		if (userDataRef) {
@@ -36,11 +35,11 @@ export const Score = () => {
 
 	return (
 		<>
-			{!username && <Loading />}
+			{!userName && <Loading />}
 			<div className={styles.score}>
 				<div className={styles.title}>SCORE</div>
 				<div className={`${styles.quantity} flexSpaceBetween`}>
-					<div className={styles.gamer}>{username}:</div>
+					<div className={styles.gamer}>{userName}:</div>
 					<span>{userScore}</span>
 				</div>
 				<div className={`${styles.quantity} flexSpaceBetween`}>
