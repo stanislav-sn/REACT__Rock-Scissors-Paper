@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import {
+	HashRouter,
+	Route,
+	Routes,
+	useLocation,
+	useNavigate,
+} from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import { Loading } from './components/shared/loading/Loading';
@@ -11,6 +17,7 @@ import { ThemeProvider } from './providers/ThemeProvider';
 import { Header } from './components/shared/header/Header';
 // import { ErrorPage } from './components/pages/ErrorPage/ErrorPage';
 import './index.css';
+import { UserProvider } from './providers/UserProvider';
 
 const Main = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -71,7 +78,9 @@ const root = createRoot(document.getElementById('root'));
 root.render(
 	<HashRouter>
 		<ThemeProvider>
-			<Main />
+			<UserProvider>
+				<Main />
+			</UserProvider>
 		</ThemeProvider>
 	</HashRouter>
 );

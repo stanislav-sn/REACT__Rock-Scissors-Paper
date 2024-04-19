@@ -1,28 +1,47 @@
-import { memo, useCallback, useState, useMemo } from 'react';
-import { useFetchUserProps } from '../../../../../hooks/use-fetchUserProps';
-import { auth } from '../../../../../firebase';
+import { useReducer, useEffect, useCallback, useMemo, useContext, memo } from 'react';
+import { UserContext } from '../../../../../providers/UserProvider';
 import styles from './Modal.module.css';
 
+const initialState = {
+	isOpen: true,
+	isClosing: false,
+	userName: 'user',
+};
+
+function reducer(state, action) {
+	switch (action.type) {
+		case 'SET_USER_NAME':
+			return { ...state, userName: action.userName };
+		case 'IS_OPEN':
+			return { ...state, isOpen: false };
+		case 'IS_CLOSING':
+			return { ...state, isClosing: true };
+		default:
+			throw new Error();
+	}
+}
+
 export const Modal = memo((props) => {
-	const [data, setData] = useState({
-		isOpen: true,
-		isClosing: false,
-	});
+	const contextAPI = useContext(UserContext);
+	const [state, dispatch] = useReducer(reducer, initialState);
 
+	const { statsDB } = contextAPI;
 	const { modalHandler, result, computerChoice, userChoice, handsList } = props;
-	const { userName, isOpen, isClosing } = data;
+	const { userName, isOpen, isClosing } = state;
 
-	const currentUser = auth.currentUser;
-
-	useFetchUserProps(currentUser, setData);
+	useEffect(() => {
+		if (statsDB.userName) {
+			dispatch({ type: 'SET_USER_NAME', userName: statsDB.userName });
+		}
+	}, [statsDB.userName]);
 
 	const handleClose = useCallback(() => {
-		setData({ isClosing: true });
-		setTimeout(() => {
-			setData({ isOpen: false, isClosing: false });
+		dispatch({ type: 'IS_CLOSING' });
+		const timerId = setTimeout(() => {
+			dispatch({ type: 'IS_OPEN' });
 			modalHandler();
 		}, 500);
-		return () => clearTimeout();
+		return () => clearTimeout(timerId);
 	}, [modalHandler]);
 
 	const computerIcon = useMemo(

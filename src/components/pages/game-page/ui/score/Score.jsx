@@ -1,29 +1,37 @@
 import { update } from 'firebase/database';
-import { useCallback, useState } from 'react';
-import { auth } from '../../../../../firebase';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Loading } from '../../../../shared/loading/Loading';
-import { useFetchUserProps } from '../../../../../hooks/use-fetchUserProps';
-import { useFetchUser } from '../../../../../hooks/use-fetchUser';
+import { UserContext } from '../../../../../providers/UserProvider';
 import '../../../../../index.css';
 import styles from './Score.module.css';
 
 export const Score = () => {
+	const contextAPI = useContext(UserContext);
 	const [data, setData] = useState({
-		userName: '',
+		userName: 'user',
 		userScore: 0,
 		compScore: 0,
 	});
-	
-	const { userName, userScore, computerScore } = data;
-	const currentUser = auth.currentUser;
-	const userDataRef = useFetchUser(currentUser);
 
-	useFetchUserProps(currentUser, setData);
+	const { statsDB, userRef } = contextAPI;
+
+	const { userName, userScore, computerScore } = data;
+
+	useEffect(() => {
+		if (statsDB) {
+			setData((prevState) => ({
+				...prevState,
+				userName: statsDB.userName,
+				userScore: statsDB.userScore,
+				computerScore: statsDB.compScore,
+			}));
+		}
+	}, [statsDB]);
 
 	const handleReset = useCallback(async () => {
-		if (userDataRef) {
+		if (userRef) {
 			try {
-				await update(userDataRef, {
+				await update(userRef, {
 					userScore: 0,
 					compScore: 0,
 				});
@@ -31,11 +39,11 @@ export const Score = () => {
 				console.error('Reset failed:', error.message);
 			}
 		}
-	}, [userDataRef]);
+	}, [userRef]);
 
 	return (
 		<>
-			{!userName && <Loading />}
+			{!statsDB && <Loading />}
 			<div className={styles.score}>
 				<div className={styles.title}>SCORE</div>
 				<div className={`${styles.quantity} flexSpaceBetween`}>
