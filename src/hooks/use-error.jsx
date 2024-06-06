@@ -2,6 +2,8 @@ import { toast } from 'react-toastify';
 import { ERRORS_LIST } from '../data/errors-data';
 import 'react-toastify/dist/ReactToastify.css';
 
+// Why it is a hook? Why it is not a simple helper function in utils folder?
+
 // The custom hook "useError" is designed to handle errors. 
 // It returns a function that takes an error object, finds a matching error in ERRORS_LIST, 
 // and displays a warning message using toast.warn.
