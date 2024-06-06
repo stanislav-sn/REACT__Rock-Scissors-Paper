@@ -6,15 +6,18 @@ export const Rules = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isClosing, setIsClosing] = useState(false);
 
+	// Why are you using useCallback here? No reason as far as I see.
 	const handleClose = useCallback(() => {
 		setIsClosing(true);
 		setTimeout(() => {
 			setIsOpen(false);
 			setIsClosing(false);
 		}, 500);
+		// This code does nothing
 		return () => clearTimeout();
 	}, []);
 
+	// Bad name - this function can also close rules
 	const handleShow = () => setIsOpen(!isOpen);
 
 	return (
@@ -29,15 +32,19 @@ export const Rules = () => {
 			{isOpen && (
 				<div className="overlay" onClick={handleClose}>
 					<div
+						{/* When isClosing === false, you get this className - `${styles.modal} false border` */}
 						className={`${styles.modal} ${isClosing && styles.closing} border`}
 						onClick={(e) => e.stopPropagation()}
 					>
+						{/* Redundant interpolation */}
 						<div className={`${styles.container}`}>
 							<button onClick={handleClose}>
 								<IoCloseOutline className={styles.icon} />
 							</button>
 							<h1>Rock, Paper, Scissors - Against the Computer</h1>
 							<h2>Rules:</h2>
+							
+							{/* Create a static data format for this rules (you have data folder) and just map throught it here */}
 							<ol>
 								<li>
 									<span>Players:</span>
