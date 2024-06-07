@@ -17,14 +17,17 @@ const initialState = {
 
 export const ForgotPassword = () => {
 	const { state, onSignData } = useSignForm(initialState);
+	// Move it inside "handleSubmit" function. You use it only there.
 	const { email, isValid } = state;
 
 	const navigate = useNavigate();
 
+	// Move it inside "handleSubmit" function. You use it only there.
 	const allInputsValid = Object.values(isValid).every(Boolean);
 
 	const handleError = useError();
 
+	// No reason to use "useCallback" here
 	const handleSubmit = useCallback(
 		async (e) => {
 			e.preventDefault();
@@ -46,12 +49,16 @@ export const ForgotPassword = () => {
 		[allInputsValid, handleError, navigate, email]
 	);
 
+	// No reason to use "useCallback" here
 	const handleLinkBack = useCallback(() => {
 		navigate('/auth');
 	}, [navigate]);
 
+	// No reason to use "useMemo" here
 	const formList = useMemo(() => {
+		// Render it inside JSX
 		return FORGOT_PASSWORD_FORM_LIST.map(
+			// Skip destructuring and just spread input data to "AuthInput"
 			({ id, type, placeholder, regex, error }) => (
 				<AuthInput
 					key={id}
@@ -79,6 +86,7 @@ export const ForgotPassword = () => {
 				</button>
 			</form>
 			<button
+				{/* Add button type */}
 				className={`${styles.btn} appButtons border`}
 				onClick={handleLinkBack}
 			>
