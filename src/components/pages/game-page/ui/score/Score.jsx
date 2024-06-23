@@ -1,5 +1,5 @@
 import { update } from 'firebase/database';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Loading } from '../../../../shared/loading/Loading';
 import { UserContext } from '../../../../../providers/UserProvider';
 import '../../../../../index.css';
@@ -28,7 +28,7 @@ export const Score = () => {
 		}
 	}, [statsDB]);
 
-	const handleReset = useCallback(async () => {
+	const handleReset = async () => {
 		if (userRef) {
 			try {
 				await update(userRef, {
@@ -39,7 +39,7 @@ export const Score = () => {
 				console.error('Reset failed:', error.message);
 			}
 		}
-	}, [userRef]);
+	};
 
 	return (
 		<>

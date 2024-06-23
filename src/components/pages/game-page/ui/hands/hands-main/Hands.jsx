@@ -1,7 +1,6 @@
-import { useEffect, useCallback, memo, useReducer } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { ref, runTransaction } from 'firebase/database';
 import { auth, database } from '../../../../../../firebase';
-import { Hand } from '../Hand-children';
 import { HandItem } from '../handItem/HandItem';
 import { Modal } from '../../modal/Modal';
 import rock from '../../../../../../assets/rock.png';
@@ -27,103 +26,76 @@ const HANDS_LIST = [
 	},
 ];
 
+const WIN_CONDITIONS = {
+	ROCK: 'SCISSORS',
+	SCISSORS: 'PAPER',
+	PAPER: 'ROCK',
+};
+
 const initialState = {
 	computerChoice: null,
 	userChoice: null,
 	result: null,
 };
 
-const reducer = (state, action) => {
-	switch (action.type) {
-		case 'setComputerChoice':
-			return {
-				...state,
-				computerChoice: action.payload,
-			};
-		case 'setUserChoice':
-			return {
-				...state,
-				userChoice: action.payload,
-			};
-		case 'setResult':
-			return {
-				...state,
-				result: action.payload,
-			};
-		default:
-			return state;
+const getRandomChoice = (arr) => Math.floor(Math.random() * arr.length);
+
+const setScore = async (score) => {
+	const user = auth.currentUser;
+	if (!user) return;
+
+	const userRef = ref(database, `users/${user.uid}/${score}/`);
+
+	try {
+		runTransaction(userRef, (currentValue) =>
+			currentValue === null ? 1 : currentValue + 1
+		);
+	} catch (error) {
+		console.error('Transaction failed:', error.message);
 	}
 };
 
-const randomNum = (arr) => {
-	return Math.floor(Math.random() * arr.length);
+const calculateResult = (userChoice, computerChoice) => {
+	if (!userChoice) return;
+
+	if (userChoice === computerChoice) return "It's a tie!";
+
+	if (WIN_CONDITIONS[userChoice] === computerChoice) {
+		setScore('userScore');
+		return 'You win!';
+	} else {
+		setScore('compScore');
+		return 'Computer wins!';
+	}
 };
 
 export const Hands = memo(() => {
-	const [state, dispatch] = useReducer(reducer, initialState);
-
+	const [state, setState] = useState(initialState);
 	const { computerChoice, userChoice, result } = state;
 
-	const user = auth.currentUser;
+	const handleHandClick = (id) => {
+		const randomId = HANDS_LIST[getRandomChoice(HANDS_LIST)].id;
+		setState((prevState) => ({
+			...prevState,
+			computerChoice: randomId,
+			userChoice: id,
+		}));
+	};
 
-	const onHandHandle = useCallback((id) => {
-		const randomId = HANDS_LIST[randomNum(HANDS_LIST)].id;
-		dispatch({ type: 'setComputerChoice', payload: randomId });
-		dispatch({ type: 'setUserChoice', payload: id });
-	}, []);
-
-	const setScore = useCallback(
-		async (properties) => {
-			const userRef = ref(database, `users/${user.uid}/${properties}/`);
-			try {
-				await runTransaction(
-					userRef,
-					(currentValue) => (currentValue || 0) + 1
-				);
-			} catch (error) {
-				console.error('Transaction failed:', error.message);
-			}
-		},
-		[user]
-	);
+	const clear = () => {
+		setState(initialState);
+	};
 
 	useEffect(() => {
-		const resultGame = () => {
-			if (!userChoice) return;
+		const result = calculateResult(userChoice, computerChoice);
 
-			if (userChoice === computerChoice) return "It's a tie!";
-
-			const wins = {
-				ROCK: 'SCISSORS',
-				SCISSORS: 'PAPER',
-				PAPER: 'ROCK',
-			};
-
-			if (wins[userChoice] === computerChoice) {
-				setScore('userScore');
-				return 'You win!';
-			} else {
-				setScore('compScore');
-				return 'Computer wins!';
-			}
-		};
-		dispatch({ type: 'setResult', payload: resultGame() });
-	}, [userChoice, computerChoice, setScore]);
-
-	const handsList = HANDS_LIST.map(({ id, name, icon }) => (
-		<HandItem
-			key={id}
-			id={id}
-			name={name}
-			icon={icon}
-			onHandClick={onHandHandle}
-		/>
-	));
-
-	const clear = useCallback(() => {
-		dispatch({ type: 'setUserChoice', payload: null });
-		dispatch({ type: 'setResult', payload: null });
-	}, []);
+		if (result) {
+			setState((prevState) => ({
+				...prevState,
+				result,
+			}));
+		}
+	}, [userChoice, computerChoice]);
 
 	return (
 		<div className={styles.hands}>
@@ -137,9 +109,15 @@ export const Hands = memo(() => {
 					modalHandler={() => clear()}
 				/>
 			)}
-			<Hand>
-				<ul className="flexSpaceBetween">{handsList}</ul>
-			</Hand>
+			<ul className="flexSpaceBetween">
+				{HANDS_LIST.map((hand) => (
+					<HandItem
+						key={hand.id}
+						{...hand}
+						onHandClick={() => handleHandClick(hand.id)}
+					/>
+				))}
+			</ul>
 		</div>
 	);
 });

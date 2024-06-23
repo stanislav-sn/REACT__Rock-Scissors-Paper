@@ -1,8 +1,7 @@
 export const ERRORS_LIST = [
 	{
 		code: 'auth/invalid-credential',
-		message:
-			'The provided credential is invalid. This can happen if the credential is malformed, expired, or has already been used.',
+		message: 'The email or password is invalid.',
 	},
 	{
 		code: 'auth/missing-password',

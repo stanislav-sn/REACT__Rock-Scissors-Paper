@@ -1,70 +1,55 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import { auth } from '../../../firebase';
 import { AuthInput } from '../auth-page/authForm/AuthInput';
-import { useSignForm } from '../../../hooks/use-signForm';
-import { useError } from '../../../hooks/use-error';
+import { useForm } from '../../../hooks/use-form';
+import { handleError } from '../../../utils/handleError';
 import { FORGOT_PASSWORD_FORM_LIST } from '../../../data/formConfig-data';
 import styles from './ForgotPassword.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
-	email: '',
-	isValid: { email: false },
+	email: { value: '', isValid: false },
 };
 
 export const ForgotPassword = () => {
-	const { state, onSignData } = useSignForm(initialState);
-	const { email, isValid } = state;
+	const { inputs, onChangeInput } = useForm(initialState);
 
 	const navigate = useNavigate();
 
-	const allInputsValid = Object.values(isValid).every(Boolean);
+	const handleSubmit = async (e) => {
+		e.preventDefault();
 
-	const handleError = useError();
+		const { email } = inputs;
 
-	const handleSubmit = useCallback(
-		async (e) => {
-			e.preventDefault();
+		if (!email.isValid) {
+			toast.warn('Please fill in all fields correctly.');
+			return;
+		}
 
-			if (!allInputsValid) {
-				toast.warn('Please fill in all fields correctly.');
-				return;
-			}
+		try {
+			await sendPasswordResetEmail(auth, email.value);
+			alert('Password reset email sent!');
+			navigate('/auth');
+		} catch (error) {
+			console.log('Error: ', error.code);
+			handleError(error);
+		}
+	};
 
-			try {
-				await sendPasswordResetEmail(auth, email);
-				alert('Password reset email sent!');
-				navigate('/auth');
-			} catch (error) {
-				console.log('Error: ', error.code);
-				handleError(error);
-			}
-		},
-		[allInputsValid, handleError, navigate, email]
-	);
-
-	const handleLinkBack = useCallback(() => {
+	const handleLinkBack = () => {
 		navigate('/auth');
-	}, [navigate]);
+	};
 
-	const formList = useMemo(() => {
-		return FORGOT_PASSWORD_FORM_LIST.map(
-			({ id, type, placeholder, regex, error }) => (
-				<AuthInput
-					key={id}
-					id={id}
-					type={type}
-					placeholder={placeholder}
-					regex={regex}
-					error={error}
-					onSignData={onSignData}
-				/>
-			)
-		);
-	}, [onSignData]);
+	const formList = useMemo(
+		() =>
+			FORGOT_PASSWORD_FORM_LIST.map((input) => (
+				<AuthInput key={input.id} onChangeInput={onChangeInput} {...input} />
+			)),
+		[onChangeInput]
+	);
 
 	return (
 		<div className={`${styles.wrapper} flexAllCenteredColumn`}>

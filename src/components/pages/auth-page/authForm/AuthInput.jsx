@@ -1,84 +1,63 @@
-import { useCallback, useReducer } from 'react';
+import { useState } from 'react';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import styles from './Auth.module.css';
 
-const initialState = {
-	showError: null,
-	showPassword: false,
-};
+const validateInput = (text, type, regex) => {
+	let isInputValid;
+	let errorKey;
 
-const reducer = (state, action) => {
-	switch (action.type) {
-		case 'setShowError':
-			return {
-				...state,
-				showError: action.payload,
-			};
-		case 'toggleShowPassword':
-			return {
-				...state,
-				showPassword: !state.showPassword,
-			};
-		case 'setIsValid':
-			return {
-				...state,
-				isValid: action.payload,
-			};
-		default:
-			return state;
+	if (type === 'password') {
+		const validLength = text === '' || regex.length.test(text);
+		const validChars = text === '' || regex.chars.test(text);
+		isInputValid = validLength && validChars;
+		errorKey = isInputValid ? null : validLength ? 'chars' : 'length';
+	} else {
+		isInputValid = text === '' || regex.pattern.test(text);
+		errorKey = isInputValid ? null : 'error';
 	}
+
+	return { isInputValid, errorKey };
 };
 
-export const AuthInput = (props) => {
-	const { id, type, placeholder, regex, error, onSignData } = props;
+export const AuthInput = ({
+	id,
+	type,
+	placeholder,
+	regex,
+	error,
+	onChangeInput,
+}) => {
+	const [errorMessage, setErrorMessage] = useState(null);
+	const [showPassword, setShowPassword] = useState(false);
 
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const handleInputChange = (event) => {
+		const text = event.target.value;
 
-	const { showError, showPassword } = state;
+		const { isInputValid, errorKey } = validateInput(text, type, regex);
 
-	const handleInputChange = useCallback(
-		(event) => {
-			const text = event.target.value;
-			let valid;
-			let errorType;
+		const isError = errorKey !== null;
+		const message = type === 'password' ? error[errorKey] : error.message;
 
-			if (type === 'password') {
-				const validLength = text === '' || regex.length.test(text);
-				const validChars = text === '' || regex.chars.test(text);
-				errorType = !validLength ? 'length' : !validChars ? 'chars' : null;
-				valid = validLength && validChars;
-			} else {
-				valid = text === '' || regex.test(text);
-				errorType = valid ? null : 'error';
-			}
+		setErrorMessage(isError ? message : null);
 
-			dispatch({
-				type: 'setShowError',
-				payload: errorType
-					? type === 'password'
-						? error[errorType]
-						: error
-					: null,
-			});
-			onSignData(text, id, valid);
-		},
-		[id, onSignData, regex, error, type]
-	);
+		onChangeInput(text, id, isInputValid);
+	};
 
-	const toggleInputType = useCallback(() => {
-		// function to switch between password and text type of the input field
-		dispatch({ type: 'toggleShowPassword' });
-	}, []);
+	const toggleInputType = () => {
+		setShowPassword((prev) => !prev);
+	};
 
 	return (
 		<div className={styles.inputBox}>
 			<input
-				className={`${showError && styles.inputError} border`}
+				className={`${errorMessage ? styles.inputError : ''} border`}
 				type={showPassword ? 'text' : type}
 				placeholder={placeholder}
-				onChange={(e) => handleInputChange(e)}
+				onChange={handleInputChange}
 			/>
-			{showError && <div className={styles.errorMessage}>{showError}</div>}
+			{errorMessage && (
+				<div className={styles.errorMessage}>{errorMessage}</div>
+			)}
 			{type === 'password' && (
 				<button
 					type="button"

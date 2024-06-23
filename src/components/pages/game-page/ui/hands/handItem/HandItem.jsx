@@ -1,13 +1,12 @@
-import { memo } from 'react';
 import styles from './HandItem.module.css';
 
-export const HandItem = memo(({ id, icon, name, onHandClick }) => {
+export const HandItem = ({ id, icon, name, onHandClick }) => {
 	return (
 		<li id={id}>
-			<button onClick={() => onHandClick(id)}>
-				<img src={icon} alt=""></img>
+			<button onClick={onHandClick}>
+				<img src={icon} alt={name} />
 				<div className={styles.name}>{name}</div>
 			</button>
 		</li>
 	);
-});
+};

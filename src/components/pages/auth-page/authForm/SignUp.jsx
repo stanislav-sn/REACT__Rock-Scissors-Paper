@@ -1,19 +1,18 @@
+import { useMemo } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import { ToastContainer, toast } from 'react-toastify';
 import { auth, database } from '../../../../firebase';
 import { AuthInput } from './AuthInput';
-import { useSignForm } from '../../../../hooks/use-signForm';
-import { useError } from '../../../../hooks/use-error';
+import { useForm } from '../../../../hooks/use-form';
+import { handleError } from '../../../../utils/handleError';
 import { SIGNUP_FORM_LIST } from '../../../../data/formConfig-data';
 import styles from './Auth.module.css';
-import { useCallback, useMemo } from 'react';
 
 const initialState = {
-	name: '',
-	email: '',
-	password: '',
-	isValid: { name: false, email: false, password: false },
+	name: { value: '', isValid: false },
+	email: { value: '', isValid: false },
+	password: { value: '', isValid: false },
 };
 
 const writeUserData = async (userUid, name, email) => {
@@ -39,53 +38,49 @@ const writeUserData = async (userUid, name, email) => {
 };
 
 export const SignUp = () => {
-	const { state, onSignData } = useSignForm(initialState);
-	const { name, email, password, isValid } = state;
+	const { inputs, onChangeInput } = useForm(initialState);
+	const { name, email, password } = inputs;
 
-	const allInputsValid = Object.values(isValid).every(Boolean);
+	const allInputsValid = name.isValid && email.isValid && password.isValid;
 
-	const handleError = useError();
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		// Registration user in "Firebase Authentication"
 
-	const handleSubmit = useCallback(
-		async (e) => {
-			e.preventDefault();
-			// Registration user in "Firebase Authentication"
+		if (!allInputsValid) {
+			toast.warn('Please fill in all fields correctly.');
+			return;
+		}
 
-			if (!allInputsValid) {
-				toast.warn('Please fill in all fields correctly.');
-				return;
-			}
+		try {
+			const userCredential = await createUserWithEmailAndPassword(
+				auth,
+				email.value,
+				password.value
+			);
+			const userUid = userCredential.user.uid;
 
-			try {
-				const userCredential = await createUserWithEmailAndPassword(
-					auth,
-					email,
-					password
+			if (userUid && name.value && email.value) {
+				await writeUserData(userUid, name.value, email.value);
+				console.log(`User ${name.value} has been successfully registered.`);
+			} else {
+				console.log(
+					`Error, UserID:${userUid}, UserName:${name.value}, UserEmail:${email.value}.`
 				);
-				const userUid = userCredential.user.uid;
-
-				if (userUid && name && email) {
-					await writeUserData(userUid, name, email);
-					console.log(`User ${name} has been successfully registered.`);
-				} else {
-					console.log(
-						`Error, UserID:${userUid}, UserName:${name}, UserEmail:${email}.`
-					);
-				}
-			} catch (error) {
-				console.log('Error: ', error.code);
-				handleError(error);
 			}
-		},
-		[allInputsValid, email, handleError, name, password]
-	);
+		} catch (error) {
+			console.log('Error: ', error.code);
+			console.log('error: ', error);
+			handleError(error);
+		}
+	};
 
 	const formList = useMemo(
 		() =>
 			SIGNUP_FORM_LIST.map((input) => (
-				<AuthInput key={input.id} onSignData={onSignData} {...input} />
+				<AuthInput key={input.id} onChangeInput={onChangeInput} {...input} />
 			)),
-		[onSignData]
+		[onChangeInput]
 	);
 
 	return (

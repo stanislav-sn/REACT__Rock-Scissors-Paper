@@ -1,10 +1,9 @@
 import { signOut } from 'firebase/auth';
 import { auth } from '../../../../firebase';
-import { useError } from '../../../../hooks/use-error';
+import { handleError } from '../../../../utils/handleError';
 import styles from './SignOut.module.css';
 
 export const SignOut = () => {
-	const handleError = useError();
 	const userSignOut = async () => {
 		try {
 			await signOut(auth);

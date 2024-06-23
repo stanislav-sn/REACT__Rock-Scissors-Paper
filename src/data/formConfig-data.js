@@ -2,8 +2,12 @@ const emailInput = {
 	id: 'email',
 	type: 'email',
 	placeholder: 'E-mail',
-	regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-	error: 'Invalid email address',
+	regex: {
+		pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+	},
+	error: {
+		message: 'Invalid email address',
+	},
 };
 
 const passwordInput = {
@@ -24,8 +28,12 @@ const nameInput = {
 	id: 'name',
 	type: 'text',
 	placeholder: 'User Name',
-	regex: /^[A-Za-zА-Яа-я0-9]{2,10}$/,
-	error: "Name must only contain 'Aa','0-9'",
+	regex: {
+		pattern: /^[A-Za-zА-Яа-я0-9]{2,10}$/,
+	},
+	error: {
+		message: "Name must only contain 'Aa','0-9'",
+	},
 };
 
 export const SIGNIN_FORM_LIST = [emailInput, passwordInput];

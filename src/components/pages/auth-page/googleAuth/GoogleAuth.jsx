@@ -3,12 +3,10 @@ import { get, ref, set } from 'firebase/database';
 import { FcGoogle } from 'react-icons/fc';
 import { ToastContainer } from 'react-toastify';
 import { auth, database, googleAuthProvider } from '../../../../firebase';
-import { useError } from '../../../../hooks/use-error';
+import { handleError } from '../../../../utils/handleError';
 import styles from './GoogleAuth.module.css';
 
 export const GoogleAuth = () => {
-	const handleError = useError();
-
 	const handleGoogleAuth = async () => {
 		try {
 			const result = await signInWithPopup(auth, googleAuthProvider);
