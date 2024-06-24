@@ -20,8 +20,7 @@
 	}
 }
 
-/*------------------------------------- 319.98px -------------------*/
-@media (min-width: 319.98px) {
+@media (min-width: 320px) {
 	.buttons {
 		-webkit-box-pack: end;
 		-webkit-justify-content: end;
@@ -40,8 +39,7 @@
 	}
 }
 
-/*------------------------------------- 359.98px --------------------*/
-@media (min-width: 359.98px) {
+@media (min-width: 360px) {
 	.header {
 		width: 100%;
 	}
@@ -57,8 +55,7 @@
 	}
 }
 
-/*------------------------------------- 427.98px ---------------------*/
-@media (min-width: 427.98px) {
+@media (min-width: 428px) {
 	html[lang='ru'] .header > h1 {
 		font-size: 2.39rem;
 	}
@@ -67,8 +64,7 @@
 	}
 }
 
-/*------------------------------------- 767.98px ---------------------*/
-@media (min-width: 767.98px) {
+@media (min-width: 768px) {
 	html[lang='ru'] .header > h1 {
 		font-size: 3.7rem;
 	}

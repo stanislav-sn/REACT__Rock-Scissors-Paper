@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ErrorPage = () => {
+export const NotFoundPage = () => {
   return (
 		<div className="error-page">
 			<h1>ErrorPage 404</h1>

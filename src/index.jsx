@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
-	HashRouter,
+	BrowserRouter,
 	Route,
 	Routes,
 	useLocation,
@@ -15,9 +15,9 @@ import { Auth } from './components/pages/auth-page/authMain/AuthMain';
 import { ForgotPassword } from './components/pages/forgotPassword-page/ForgotPassword';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { Header } from './components/shared/header/Header';
-// import { ErrorPage } from './components/pages/ErrorPage/ErrorPage';
-import './index.css';
 import { UserProvider } from './providers/UserProvider';
+import { NotFoundPage } from './components/pages/notFound-page/NotFoundPage';
+import './index.css';
 
 const Main = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -37,10 +37,10 @@ const Main = () => {
 			path: '/forgot-password',
 			element: <ForgotPassword />,
 		},
-		// {
-		// 	path: '*',
-		// 	element: <ErrorPage />,
-		// },
+		{
+			path: '*',
+			element: <NotFoundPage />,
+		},
 	];
 
 	useEffect(() => {
@@ -76,11 +76,11 @@ const Main = () => {
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-	<HashRouter>
+	<BrowserRouter>
 		<ThemeProvider>
 			<UserProvider>
 				<Main />
 			</UserProvider>
 		</ThemeProvider>
-	</HashRouter>
+	</BrowserRouter>
 );

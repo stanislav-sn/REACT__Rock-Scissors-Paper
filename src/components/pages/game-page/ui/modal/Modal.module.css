@@ -41,7 +41,7 @@
 	grid-template-columns: 1fr;
 	-ms-grid-rows: 0.5fr 1.5fr;
 	grid-template-rows: 0.5fr 1.5fr;
-	    grid-template-areas:
+	grid-template-areas:
 		'h1'
 		'gamers';
 	-webkit-animation: slideDown 0.6s ease 0s 1 normal running;
@@ -64,9 +64,9 @@
 	-ms-grid-column: 1;
 	grid-area: h1;
 	-ms-grid-column-align: center;
-	    justify-self: center;
+	justify-self: center;
 	-ms-grid-row-align: center;
-	    align-self: center;
+	align-self: center;
 }
 
 .close {
@@ -81,7 +81,7 @@
 	display: grid;
 	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
-	    grid-template-areas:
+	grid-template-areas:
 		'userName computerName'
 		'userChoice computerChoice';
 	grid-area: gamers;
@@ -91,9 +91,9 @@
 	-ms-grid-row: 1;
 	-ms-grid-column: 1;
 	-ms-grid-column-align: center;
-	    justify-self: center;
+	justify-self: center;
 	-ms-grid-row-align: center;
-	    align-self: center;
+	align-self: center;
 	grid-area: userName;
 }
 
@@ -101,9 +101,9 @@
 	-ms-grid-row: 1;
 	-ms-grid-column: 2;
 	-ms-grid-column-align: center;
-	    justify-self: center;
+	justify-self: center;
 	-ms-grid-row-align: center;
-	    align-self: center;
+	align-self: center;
 	grid-area: computerName;
 }
 
@@ -111,23 +111,22 @@
 	-ms-grid-row: 2;
 	-ms-grid-column: 1;
 	-ms-grid-column-align: center;
-	    justify-self: center;
+	justify-self: center;
 	-ms-grid-row-align: center;
-	    align-self: center;
+	align-self: center;
 	grid-area: userChoice;
 }
 .computerChoice {
 	-ms-grid-row: 2;
 	-ms-grid-column: 2;
 	-ms-grid-column-align: center;
-	    justify-self: center;
+	justify-self: center;
 	-ms-grid-row-align: center;
-	    align-self: center;
+	align-self: center;
 	grid-area: computerChoice;
 }
 
-/*------------------------------------ 319.98px ---------------------*/
-@media (min-width: 319.98px) {
+@media (min-width: 320px) {
 	.modal {
 		width: 90vw;
 		height: 20rem;
@@ -153,8 +152,7 @@
 	}
 }
 
-/*------------------------------------ 359.98px ---------------------*/
-@media (min-width: 359.98px) {
+@media (min-width: 360px) {
 	.modal {
 		width: 90vw;
 		height: 22rem;
@@ -168,8 +166,7 @@
 	}
 }
 
-/*------------------------------------ 427.98px ---------------------*/
-@media (min-width: 427.98px) {
+@media (min-width: 428px) {
 	.modal {
 		width: 90vw;
 		height: 24rem;
@@ -184,8 +181,7 @@
 	}
 }
 
-/*------------------------------------ 767.98px ---------------------*/
-@media (min-width: 767.98px) {
+@media (min-width: 768px) {
 	.modal {
 		width: 70vw;
 		height: 26rem;
@@ -203,8 +199,7 @@
 	}
 }
 
-/*------------------------------------ 1199.98px ---------------------*/
-@media (min-width: 1199.98px) {
+@media (min-width: 1200px) {
 	.modal {
 		width: 49vw;
 		height: 28rem;

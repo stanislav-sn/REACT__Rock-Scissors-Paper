@@ -53,8 +53,7 @@
 	padding: 1rem;
 }
 
-/*----------------------------------- 319.98px -------------------*/
-@media (min-width: 319.98px) {
+@media (min-width: 320px) {
 	.auth {
 		margin-top: 0.8rem;
 	}
@@ -69,8 +68,7 @@
 	}
 }
 
-/*----------------------------------- 359.98px ---------------------*/
-@media (min-width: 359.98px) {
+@media (min-width: 360px) {
 	.auth {
 		margin-top: 1.5rem;
 	}
@@ -79,8 +77,7 @@
 	}
 }
 
-/*----------------------------------- 427.98px ---------------------*/
-@media (min-width: 427.98px) {
+@media (min-width: 428px) {
 	.handle {
 		margin-top: 1.5rem;
 		font-size: 1.4rem;
@@ -90,8 +87,7 @@
 	}
 }
 
-/*----------------------------------- 767.98px ---------------------*/
-@media (min-width: 767.98px) {
+@media (min-width: 768px) {
 	.handle {
 		margin-top: 1.5rem;
 		font-size: 1.5rem;

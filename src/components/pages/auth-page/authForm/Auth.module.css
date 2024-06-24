@@ -85,8 +85,7 @@
 	margin-top: 15px;
 }
 
-/*------------------------------------ 319.98px  -------------------*/
-@media (min-width: 319.98px) {
+@media (min-width: 320px) {
 	.signContainer h2 {
 		font-size: 1.6rem;
 		margin-bottom: 0.1rem;
@@ -110,8 +109,8 @@
 	}
 	.togglePasswordIcon {
 		position: absolute;
-    top: 0.55rem;
-    right: 0.55rem;
+		top: 0.55rem;
+		right: 0.55rem;
 		width: 1.6rem;
 	}
 	.errorMessage {
@@ -131,8 +130,7 @@
 	}
 }
 
-/*------------------------------------ 359.98 ---------------------*/
-@media (min-width: 359.98px) {
+@media (min-width: 360px) {
 	.signContainer h2 {
 		font-size: 2rem;
 		margin-bottom: 1rem;
@@ -154,7 +152,7 @@
 	}
 	.togglePasswordIcon {
 		top: 0.8rem;
-    right: 0.8rem;
+		right: 0.8rem;
 	}
 	.errorMessage {
 		font-size: 0.97rem;
@@ -166,8 +164,7 @@
 	}
 }
 
-/*------------------------------------ 427.98px ---------------------*/
-@media (min-width: 427.98px) {
+@media (min-width: 428px) {
 	.signContainer h2 {
 		font-size: 2rem;
 		margin-bottom: 0.8rem;
@@ -186,7 +183,7 @@
 	}
 	.togglePasswordIcon {
 		top: 0.8rem;
-    right: 0.8rem;
+		right: 0.8rem;
 		width: 1.9rem;
 	}
 	.errorMessage {
@@ -197,8 +194,7 @@
 	}
 }
 
-/*------------------------------------ 767.98px ---------------------*/
-@media (min-width: 767.98px) {
+@media (min-width: 768px) {
 	.signContainer h2 {
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
@@ -215,8 +211,7 @@
 	}
 }
 
-/*------------------------------------ 991.98px ---------------------*/
-@media (min-width: 991.98px) {
+@media (min-width: 992px) {
 	.signContainer h2 {
 		font-size: 2rem;
 		margin-bottom: 1rem;

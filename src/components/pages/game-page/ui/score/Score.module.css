@@ -1,5 +1,4 @@
-/*----------------- 319.98px  -------------------*/
-@media (min-width: 319.98px) {
+@media (min-width: 320px) {
 	html[lang='ru'] .score {
 		width: 7.5rem;
 	}
@@ -29,8 +28,7 @@
 	}
 }
 
-/*----------------- 359.98  ---------------------*/
-@media (min-width: 359.98px) {
+@media (min-width: 360px) {
 	html[lang='ru'] .score {
 		width: 7.8rem;
 	}
@@ -45,8 +43,7 @@
 	}
 }
 
-/*----------------- 427.98px  ---------------------*/
-@media (min-width: 427.98px) {
+@media (min-width: 428px) {
 	.title {
 		font-size: 2rem;
 	}
@@ -55,8 +52,7 @@
 	}
 }
 
-/*----------------- 767.98px  ---------------------*/
-@media (min-width: 767.98px) {
+@media (min-width: 768px) {
 	html[lang='ru'] .score {
 		width: 10.6rem;
 	}
@@ -74,15 +70,13 @@
 	}
 }
 
-/*----------------- 1199.98px  ---------------------*/
-@media (min-width: 1199.98px) {
+@media (min-width: 1200px) {
 	.score {
 		margin: 2.7rem 0 0 0.4rem;
 	}
 }
 
-/*----------------- 1399.98px  ---------------------*/
-@media (min-width: 1399.98px) {
+@media (min-width: 1400px) {
 	.score {
 		margin: 2rem 0 0 0.4rem;
 	}

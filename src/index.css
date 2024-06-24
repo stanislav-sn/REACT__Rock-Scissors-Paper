@@ -282,8 +282,7 @@ h1 {
 		'Hands Hands Hands';
 }
 
-/*----------------------------------- 319.98px -------------------*/
-@media (min-width: 319.98px) {
+@media (min-width: 320px) {
 	.container {
 		width: 100%;
 		max-width: 30rem;
@@ -306,8 +305,7 @@ h1 {
 	}
 }
 
-/*----------------------------------- 427.98px ---------------------*/
-@media (min-width: 427.98px) {
+@media (min-width: 428px) {
 	.container {
 		max-width: 34rem;
 		padding: 0 1.25rem;
@@ -317,8 +315,7 @@ h1 {
 	}
 }
 
-/*----------------------------------- 767.98px ---------------------*/
-@media (min-width: 767.98px) {
+@media (min-width: 768px) {
 	.container {
 		width: 90vw;
 		max-width: 46.9rem;
@@ -329,15 +326,13 @@ h1 {
 	}
 }
 
-/*----------------------------------- 991.98px ---------------------*/
-@media (min-width: 991.98px) {
+@media (min-width: 992px) {
 	.container {
 		max-width: 49.4rem;
 	}
 }
 
-/*----------------------------------- 1199.98px ---------------------*/
-@media (min-width: 1199.98px) {
+@media (min-width: 1200px) {
 	.container {
 		max-width: 53.1rem;
 	}
