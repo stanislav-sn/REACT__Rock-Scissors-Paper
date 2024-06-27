@@ -1,28 +1,14 @@
-@-webkit-keyframes animation {
-	from {
-		-webkit-transform: translateY(-50%);
-		transform: translateY(-50%);
-	}
-	to {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-}
-
 @keyframes animation {
 	from {
-		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
 	}
 	to {
-		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
 }
 
 .wrapper {
 	animation: animation 0.4s ease-out;
-	-webkit-animation: animation 0.4s ease-out;
 }
 
 .handle {

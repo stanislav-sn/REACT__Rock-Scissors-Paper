@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { SignOut } from './signOut/SignOut';
 import { Rules } from './rules/Rules';
 import { ThemeColor } from './themeColor/ThemeColor';
@@ -6,7 +7,7 @@ import styles from './Header.module.css';
 export const Header = ({ auth }) => {
 	return (
 		<header className={styles.header}>
-			<div className={`${styles.buttons} flexVerticalCentered`}>
+			<div className={classNames(styles.buttons, 'flexVerticalCentered')}>
 				<ThemeColor />
 				{auth.currentUser && (
 					<>

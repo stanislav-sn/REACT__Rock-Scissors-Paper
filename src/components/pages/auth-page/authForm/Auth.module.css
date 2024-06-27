@@ -1,49 +1,18 @@
-@-webkit-keyframes shake {
-	0%,
-	100% {
-		-webkit-transform: translate(0, 0);
-		-ms-transform: translate(0, 0);
-		transform: translate(0, 0);
-	}
-	10%,
-	30%,
-	50%,
-	70% {
-		-webkit-transform: translate(-2px, 0);
-		-ms-transform: translate(-2px, 0);
-		transform: translate(-2px, 0);
-	}
-	20%,
-	40%,
-	60%,
-	80% {
-		-webkit-transform: translate(2px, 0);
-		-ms-transform: translate(2px, 0);
-		transform: translate(2px, 0);
-	}
-}
-
 @keyframes shake {
 	0%,
 	100% {
-		-webkit-transform: translate(0, 0);
-		-ms-transform: translate(0, 0);
 		transform: translate(0, 0);
 	}
 	10%,
 	30%,
 	50%,
 	70% {
-		-webkit-transform: translate(-2px, 0);
-		-ms-transform: translate(-2px, 0);
 		transform: translate(-2px, 0);
 	}
 	20%,
 	40%,
 	60%,
 	80% {
-		-webkit-transform: translate(2px, 0);
-		-ms-transform: translate(2px, 0);
 		transform: translate(2px, 0);
 	}
 }
@@ -58,7 +27,6 @@
 }
 
 .inputBox input {
-	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	font-family: var(--font-lowercase);
 	font-size: 1.2rem;
@@ -68,7 +36,6 @@
 
 .inputError {
 	position: absolute;
-	-webkit-animation: shake 0.3s ease-in-out;
 	animation: shake 0.3s ease-in-out;
 	border: 2px solid var(--error-color) !important;
 }
@@ -86,11 +53,11 @@
 }
 
 @media (min-width: 320px) {
-	.signContainer h2 {
+	.formContainer h2 {
 		font-size: 1.6rem;
 		margin-bottom: 0.1rem;
 	}
-	.signContainer span {
+	.formContainer span {
 		font-size: 1.3rem;
 	}
 	.form {
@@ -131,11 +98,11 @@
 }
 
 @media (min-width: 360px) {
-	.signContainer h2 {
+	.formContainer h2 {
 		font-size: 2rem;
 		margin-bottom: 1rem;
 	}
-	.signContainer span {
+	.formContainer span {
 		margin: 0.3rem 0;
 	}
 	.forgotPassword {
@@ -165,11 +132,11 @@
 }
 
 @media (min-width: 428px) {
-	.signContainer h2 {
+	.formContainer h2 {
 		font-size: 2rem;
 		margin-bottom: 0.8rem;
 	}
-	.signContainer span {
+	.formContainer span {
 		margin: 0.7rem 0;
 	}
 	.inputBox {
@@ -195,11 +162,11 @@
 }
 
 @media (min-width: 768px) {
-	.signContainer h2 {
+	.formContainer h2 {
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
 	}
-	.signContainer span {
+	.formContainer span {
 		font-size: 1.7rem;
 	}
 	.forgotPassword {
@@ -212,11 +179,11 @@
 }
 
 @media (min-width: 992px) {
-	.signContainer h2 {
+	.formContainer h2 {
 		font-size: 2rem;
 		margin-bottom: 1rem;
 	}
-	.signContainer span {
+	.formContainer span {
 		font-size: 1.5rem;
 	}
 	.forgotPassword {

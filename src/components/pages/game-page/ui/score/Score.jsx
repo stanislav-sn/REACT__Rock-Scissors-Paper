@@ -1,5 +1,6 @@
-import { update } from 'firebase/database';
 import { useContext, useEffect, useState } from 'react';
+import { update } from 'firebase/database';
+import classNames from 'classnames';
 import { Loading } from '../../../../shared/loading/Loading';
 import { UserContext } from '../../../../../providers/UserProvider';
 import '../../../../../index.css';
@@ -41,26 +42,28 @@ export const Score = () => {
 		}
 	};
 
+	if (!statsDB) {
+		return <Loading />;
+	}
+
 	return (
-		<>
-			{!statsDB && <Loading />}
-			<div className={styles.score}>
-				<div className={styles.title}>SCORE</div>
-				<div className={`${styles.quantity} flexSpaceBetween`}>
-					<div className={styles.gamer}>{userName}:</div>
-					<span>{userScore}</span>
-				</div>
-				<div className={`${styles.quantity} flexSpaceBetween`}>
-					<div className={styles.gamer}>Computer:</div>
-					<span>{computerScore}</span>
-				</div>
-				<button
-					onClick={handleReset}
-					className={`${styles.reset} appButtons border`}
-				>
-					Reset
-				</button>
+		<div className={styles.score}>
+			<div className={styles.title}>SCORE</div>
+			<div className={classNames(styles.quantity, 'flexSpaceBetween')}>
+				<div className={styles.gamer}>{userName}:</div>
+				<span>{userScore}</span>
 			</div>
-		</>
+			<div className={classNames(styles.quantity, 'flexSpaceBetween')}>
+				<div className={styles.gamer}>Computer:</div>
+				<span>{computerScore}</span>
+			</div>
+			<button
+				type="button"
+				onClick={handleReset}
+				className={classNames(styles.reset, 'appButtons', 'border')}
+			>
+				Reset
+			</button>
+		</div>
 	);
 };

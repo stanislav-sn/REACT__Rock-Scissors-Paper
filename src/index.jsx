@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
 	BrowserRouter,
@@ -9,14 +9,13 @@ import {
 } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
-import { Loading } from './components/shared/loading/Loading';
 import Game from './components/pages/game-page/Game';
 import { Auth } from './components/pages/auth-page/authMain/AuthMain';
 import { ForgotPassword } from './components/pages/forgotPassword-page/ForgotPassword';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { Header } from './components/shared/header/Header';
 import { UserProvider } from './providers/UserProvider';
-import { NotFoundPage } from './components/pages/notFound-page/NotFoundPage';
+import { Loading } from './components/shared/loading/Loading';
 import './index.css';
 
 const Main = () => {
@@ -37,10 +36,6 @@ const Main = () => {
 			path: '/forgot-password',
 			element: <ForgotPassword />,
 		},
-		{
-			path: '*',
-			element: <NotFoundPage />,
-		},
 	];
 
 	useEffect(() => {
@@ -51,25 +46,26 @@ const Main = () => {
 				navigate('/auth');
 			}
 		});
-		const timerLoading = setTimeout(() => setIsLoading(false), 1000);
+		const timerLoading = setTimeout(() => setIsLoading(false), 500);
 		return () => {
 			clearTimeout(timerLoading);
 			listen();
 		};
 	}, [location.pathname, navigate]);
 
+	if (isLoading) {
+		return <Loading />;
+	}
+
 	return (
-		<>
-			{isLoading && <Loading />}
-			<div className="container ">
-				<Header auth={auth} />
-				<Routes>
-					{routes.map((route, i) => (
-						<Route key={i} {...route} />
-					))}
-				</Routes>
-			</div>
-		</>
+		<div className="container ">
+			<Header auth={auth} />
+			<Routes>
+				{routes.map((route) => (
+					<Route key={route.path} {...route} />
+				))}
+			</Routes>
+		</div>
 	);
 };
 

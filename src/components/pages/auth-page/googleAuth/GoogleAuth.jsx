@@ -2,6 +2,7 @@ import { getAdditionalUserInfo, signInWithPopup } from 'firebase/auth';
 import { get, ref, set } from 'firebase/database';
 import { FcGoogle } from 'react-icons/fc';
 import { ToastContainer } from 'react-toastify';
+import classNames from 'classnames';
 import { auth, database, googleAuthProvider } from '../../../../firebase';
 import { handleError } from '../../../../utils/handleError';
 import styles from './GoogleAuth.module.css';
@@ -31,7 +32,8 @@ export const GoogleAuth = () => {
 	return (
 		<>
 			<button
-				className={`${styles.btn} flexAllCentered border`}
+				type="button"
+				className={classNames(styles.btn, 'flexAllCentered', 'border')}
 				onClick={handleGoogleAuth}
 			>
 				<FcGoogle className={styles.icon} />

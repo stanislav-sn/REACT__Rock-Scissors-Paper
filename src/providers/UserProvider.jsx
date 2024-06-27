@@ -3,12 +3,18 @@ import { onValue, ref } from 'firebase/database';
 import { auth, database } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 
-export const UserContext = createContext();
+const initialUserData = {
+	statsDB: null,
+	userRef: null,
+};
+
+export const UserContext = createContext({
+	data: initialUserData,
+	setData: () => {},
+});
+
 export const UserProvider = ({ children }) => {
-	const [data, setData] = useState({
-		statsDB: null,
-		userRef: null,
-	});
+	const [data, setData] = useState(initialUserData);
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

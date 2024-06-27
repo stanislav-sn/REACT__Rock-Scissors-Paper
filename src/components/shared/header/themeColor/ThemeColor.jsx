@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
+import classNames from 'classnames';
 import { ThemeContext } from '../../../../providers/ThemeProvider';
 import styles from './ThemeColor.module.css';
 
@@ -9,7 +10,11 @@ export const ThemeColor = () => {
 	const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
 	return (
-		<button className={`${styles.theme} flexAllCentered`} onClick={toggleTheme}>
+		<button
+			type="button"
+			className={classNames(styles.theme, 'flexAllCentered')}
+			onClick={toggleTheme}
+		>
 			{theme === 'dark' ? (
 				<MdDarkMode title="Dark" className={styles.light} />
 			) : (

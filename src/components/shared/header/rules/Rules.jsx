@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { IoCloseOutline } from 'react-icons/io5';
+import classNames from 'classnames';
 import rulesData from '../../../../data/rules';
 import styles from './Rules.module.css';
 
@@ -28,7 +29,8 @@ export const Rules = () => {
 	return (
 		<>
 			<button
-				className={`${styles.btn} appButtons border`}
+				type="button"
+				className={classNames(styles.btn, 'appButtons', 'border')}
 				onClick={toggleRules}
 			>
 				Show rules
@@ -36,13 +38,14 @@ export const Rules = () => {
 			{isOpen && (
 				<div className="overlay" onClick={handleClose}>
 					<div
-						className={`${styles.modal} ${
-							isClosing ? styles.closing : ''
-						} border`}
-						onClick={(e) => e.stopPropagation()}
+						className={classNames(
+							styles.modal,
+							{ [styles.closing]: isClosing },
+							'border'
+						)}
 					>
 						<div className={styles.container}>
-							<button onClick={handleClose}>
+							<button type="button" onClick={handleClose}>
 								<IoCloseOutline className={styles.icon} />
 							</button>
 							<h1>Rock, Paper, Scissors - Against the Computer</h1>

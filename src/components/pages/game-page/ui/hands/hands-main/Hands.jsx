@@ -63,10 +63,10 @@ const calculateResult = (userChoice, computerChoice) => {
 	if (WIN_CONDITIONS[userChoice] === computerChoice) {
 		setScore('userScore');
 		return 'You win!';
-	} else {
-		setScore('compScore');
-		return 'Computer wins!';
 	}
+	
+	setScore('compScore');
+	return 'Computer wins!';
 };
 
 export const Hands = memo(() => {

@@ -6,7 +6,6 @@
 		width: 6.5rem;
 		margin-left: 0.3rem;
 		grid-area: Score;
-		-ms-grid-row-align: center;
 		align-self: center;
 	}
 	.title {

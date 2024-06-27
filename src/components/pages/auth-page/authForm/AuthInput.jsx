@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
+import classNames from 'classnames';
 import styles from './Auth.module.css';
 
 const validateInput = (text, type, regex) => {
@@ -50,7 +51,7 @@ export const AuthInput = ({
 	return (
 		<div className={styles.inputBox}>
 			<input
-				className={`${errorMessage ? styles.inputError : ''} border`}
+				className={classNames({[styles.inputError]: errorMessage}, 'border')}
 				type={showPassword ? 'text' : type}
 				placeholder={placeholder}
 				onChange={handleInputChange}

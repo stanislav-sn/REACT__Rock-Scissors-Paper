@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import classNames from 'classnames';
 import { UserContext } from '../../../../../providers/UserProvider';
 import styles from './Modal.module.css';
 
@@ -55,11 +56,11 @@ export const Modal = ({modalHandler, result, computerChoice, userChoice, handsLi
 	return isOpen ? (
 		<div className="overlay" onClick={handleClose}>
 			<div
-				className={`${styles.modal} ${isClosing ? styles.close : ''} border`}
+				className={classNames(styles.modal, {[styles.close]: isClosing}, 'border')}
 				onClick={handleClose}
 			>
 				<h1>{result}</h1>
-				<div className={`${styles.box}`}>
+				<div className={styles.box}>
 					<p className={styles.userName}>{userName}</p>
 					<img className={styles.userChoice} src={userIcon} alt="User Choice" />
 					<p className={styles.computerName}>Computer</p>

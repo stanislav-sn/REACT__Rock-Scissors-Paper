@@ -1,27 +1,9 @@
-@-webkit-keyframes slideDown {
-	from {
-		top: -50%;
-	}
-	to {
-		top: 50%;
-	}
-}
-
 @keyframes slideDown {
 	from {
 		top: -50%;
 	}
 	to {
 		top: 50%;
-	}
-}
-
-@-webkit-keyframes slideUp {
-	from {
-		top: 50%;
-	}
-	to {
-		top: -50%;
 	}
 }
 
@@ -35,51 +17,33 @@
 }
 
 .modal {
-	display: -ms-grid;
 	display: grid;
-	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
-	-ms-grid-rows: 0.5fr 1.5fr;
 	grid-template-rows: 0.5fr 1.5fr;
 	grid-template-areas:
 		'h1'
 		'gamers';
-	-webkit-animation: slideDown 0.6s ease 0s 1 normal running;
 	animation: slideDown 0.6s ease 0s 1 normal running;
 	position: absolute;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	background-color: var(--theme);
-	-webkit-border-radius: 20px;
 	border-radius: 20px;
-	-webkit-box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
-		0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
 	box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
 		0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 
 .modal h1 {
-	-ms-grid-row: 1;
-	-ms-grid-column: 1;
 	grid-area: h1;
-	-ms-grid-column-align: center;
 	justify-self: center;
-	-ms-grid-row-align: center;
 	align-self: center;
 }
 
 .close {
-	-webkit-animation: slideUp 0.5s ease-in forwards;
 	animation: slideUp 0.5s ease-in forwards;
 }
 
 .box {
-	-ms-grid-row: 2;
-	-ms-grid-column: 1;
-	display: -ms-grid;
 	display: grid;
-	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		'userName computerName'
@@ -88,40 +52,24 @@
 }
 
 .userName {
-	-ms-grid-row: 1;
-	-ms-grid-column: 1;
-	-ms-grid-column-align: center;
 	justify-self: center;
-	-ms-grid-row-align: center;
 	align-self: center;
 	grid-area: userName;
 }
 
 .computerName {
-	-ms-grid-row: 1;
-	-ms-grid-column: 2;
-	-ms-grid-column-align: center;
 	justify-self: center;
-	-ms-grid-row-align: center;
 	align-self: center;
 	grid-area: computerName;
 }
 
 .userChoice {
-	-ms-grid-row: 2;
-	-ms-grid-column: 1;
-	-ms-grid-column-align: center;
 	justify-self: center;
-	-ms-grid-row-align: center;
 	align-self: center;
 	grid-area: userChoice;
 }
 .computerChoice {
-	-ms-grid-row: 2;
-	-ms-grid-column: 2;
-	-ms-grid-column-align: center;
 	justify-self: center;
-	-ms-grid-row-align: center;
 	align-self: center;
 	grid-area: computerChoice;
 }

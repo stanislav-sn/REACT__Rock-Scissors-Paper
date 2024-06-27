@@ -3,16 +3,11 @@
 }
 
 .hands ul li {
-	-webkit-transition: -webkit-transform 0.2s;
-	transition: -webkit-transform 0.2s;
-	-o-transition: transform 0.2s;
 	transition: transform 0.2s;
-	transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 @media (min-width: 320px) {
 	.hands {
-		-ms-grid-row-align: center;
 		align-self: center;
 		grid-area: Hands;
 		cursor: pointer;
@@ -48,8 +43,6 @@
 
 @media (min-width: 992px) {
 	.hands ul li:hover {
-		-webkit-transform: scale(1.1);
-		-ms-transform: scale(1.1);
 		transform: scale(1.1);
 		z-index: 1;
 	}

@@ -2,10 +2,11 @@ import { useMemo } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import classNames from 'classnames';
 import { auth } from '../../../../firebase';
 import { GoogleAuth } from '../googleAuth/GoogleAuth';
 import { AuthInput } from './AuthInput';
-import { useForm } from '../../../../hooks/use-form';
+import { useForm } from '../../../../hooks/useForm';
 import { handleError } from '../../../../utils/handleError';
 import { SIGNIN_FORM_LIST } from '../../../../data/formConfig-data';
 import 'react-toastify/dist/ReactToastify.css';
@@ -47,19 +48,21 @@ export const SignIn = () => {
 	);
 
 	return (
-		<div className={`${styles.signContainer} flexVerticalCenteredColumn`}>
+		<div
+			className={classNames(styles.formContainer, 'flexVerticalCenteredColumn')}
+		>
 			<h2>Log In</h2>
 			<GoogleAuth />
 			<span>OR</span>
 			<form
-				className={`${styles.form} flexVerticalCenteredColumn`}
+				className={classNames(styles.form, 'flexVerticalCenteredColumn')}
 				onSubmit={handleSubmit}
 			>
 				{formList}
 				<Link className={styles.forgotPassword} to="/forgot-password">
 					Forgot Password?
 				</Link>
-				<button type="submit" className="appButtons border">
+				<button type="submit" className={classNames('appButtons', 'border')}>
 					Log In
 				</button>
 			</form>
