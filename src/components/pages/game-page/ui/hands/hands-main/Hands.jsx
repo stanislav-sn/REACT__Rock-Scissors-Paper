@@ -3,9 +3,9 @@ import { ref, runTransaction } from 'firebase/database';
 import { auth, database } from '../../../../../../firebase';
 import { HandItem } from '../handItem/HandItem';
 import { Modal } from '../../modal/Modal';
-import rock from '../../../../../../assets/rock.png';
-import scissors from '../../../../../../assets/scissors.png';
-import paper from '../../../../../../assets/paper.png';
+import rock from '../../../../../../assets/rock.svg';
+import scissors from '../../../../../../assets/scissors.svg';
+import paper from '../../../../../../assets/paper.svg';
 import styles from './Hands.module.css';
 
 const HANDS_LIST = [

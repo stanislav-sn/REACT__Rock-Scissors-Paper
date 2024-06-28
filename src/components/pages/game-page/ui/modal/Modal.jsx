@@ -15,10 +15,13 @@ export const Modal = ({modalHandler, result, computerChoice, userChoice, handsLi
 
 	const setUserName = (userName) =>
 		setState((prevState) => ({ ...prevState, userName }));
+
 	const closeModal = () =>
 		setState((prevState) => ({ ...prevState, isOpen: false }));
+
 	const startClosingModal = () =>
 		setState((prevState) => ({ ...prevState, isClosing: true }));
+	
 	const stopClosingModal = () =>
 		setState((prevState) => ({ ...prevState, isClosing: false }));
 
