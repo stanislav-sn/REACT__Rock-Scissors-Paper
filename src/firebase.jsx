@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const firebaseConfig = {
 	apiKey: API_KEY,
