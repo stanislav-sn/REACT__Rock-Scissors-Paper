@@ -51,12 +51,12 @@ export const Rules = () => {
 							<h1>Rock, Paper, Scissors - Against the Computer</h1>
 							<h2>Rules:</h2>
 							<ol>
-								{rulesData.map((rule, index) => (
-									<li key={index}>
+								{rulesData.map((rule) => (
+									<li key={rule.id}>
 										<span>{rule.title}</span>
 										<ul>
-											{rule.content.map((contentItem, idx) => (
-												<li key={idx}>{contentItem}</li>
+											{rule.content.map((contentItem) => (
+												<li key={rule.id}>{contentItem}</li>
 											))}
 										</ul>
 									</li>
