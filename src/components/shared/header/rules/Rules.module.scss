@@ -21,105 +21,115 @@
 .btn {
 	@include border;
 	@include button;
-	padding: 0 0.8rem;
-	margin: 0 0.5rem;
+
+	& {
+		padding: 0 0.8rem;
+		margin: 0 0.5rem;
+	}
+
+	&:hover {
+		@include button-hover;
+	}
 }
 
-.btn:hover {
-	@include button-hover;
-}
+.overlay {
+	@include overlay;
 
-.modal {
-	position: absolute;
-	top: 2%;
-	left: 2%;
-	right: 2%;
-	bottom: 2%;
-	z-index: 3;
-	background-color: var(--theme);
-	border-radius: 25px;
-	animation: slideDown 0.5s ease-out forwards;
-	cursor: default;
-
-	.container {
-		max-height: 100%;
-		max-width: 100%;
-		padding: 1rem;
-		overflow-y: auto;
+	.modal {
+		position: absolute;
+		top: 2%;
+		left: 2%;
+		right: 2%;
+		bottom: 2%;
+		z-index: 3;
+		background-color: var(--theme);
 		border-radius: 25px;
+		animation: slideDown 0.5s ease-out forwards;
+		cursor: default;
 
-		.icon {
-			position: absolute;
-			right: 0.3rem;
-			top: 0.3rem;
-			width: 2rem;
-			height: 2rem;
-		}
-		h1 {
-			text-align: center;
-			font-size: 1.8rem;
-			margin-top: 1.6rem;
-			line-height: 1;
-		}
-		h2 {
-			text-align: center;
-			margin-top: 0.7rem;
-			font-size: 1.6rem;
-		}
-		ol {
-			li {
-				margin: 0.1rem 0 0 1.2rem;
+		.container {
+			max-height: 100%;
+			max-width: 100%;
+			padding: 1rem;
+			overflow-y: auto;
+			border-radius: 25px;
 
-				&::marker {
-					font-size: 1.5rem;
-				}
-				&:first-child {
-					margin-top: 0;
-				}
-				span {
-					font-size: 1.5rem;
-				}
-				ul {
-					li {
-						margin-left: 0.5rem;
-						font-size: 1.3rem;
-						letter-spacing: 0.03rem;
+			.icon {
+				position: absolute;
+				right: 0.3rem;
+				top: 0.3rem;
+				width: 2rem;
+				height: 2rem;
+			}
+			h1 {
+				text-align: center;
+				font-size: 1.8rem;
+				margin-top: 1.6rem;
+				line-height: 1;
+			}
+			h2 {
+				text-align: center;
+				margin-top: 0.7rem;
+				font-size: 1.6rem;
+			}
+			ol {
+				li {
+					margin: 0.1rem 0 0 1.2rem;
+
+					&::marker {
+						font-size: 1.5rem;
+					}
+					&:first-child {
+						margin-top: 0;
+					}
+					span {
+						font-size: 1.5rem;
+					}
+					ul {
+						li {
+							margin-left: 0.5rem;
+							font-size: 1.3rem;
+							letter-spacing: 0.03rem;
+						}
 					}
 				}
 			}
 		}
 	}
-}
-
-.closing {
-	animation: slideUp 0.5s ease-in forwards;
+	.closing {
+		animation: slideUp 0.5s ease-in forwards;
+	}
 }
 
 @media (min-width: 576px) {
 	.btn {
-		padding: 0 0.9rem;
-		margin: 0 0.8rem;
+		& {
+			padding: 0 0.9rem;
+			margin: 0 0.8rem;
+		}
 	}
-	.modal {
-		.container {
-			h1 {
-				font-size: 2.4rem;
-				margin-top: 1.8rem;
-			}
-			h2 {
-				font-size: 2rem;
-			}
-			ol {
-				li {
-					&::marker {
-						font-size: 1.8rem;
-					}
-					span {
-						font-size: 1.8rem;
-					}
-					ul {
-						li {
-							font-size: 1.5rem;
+	.overlay {
+		.modal {
+			.container {
+				h1 {
+					font-size: 2.4rem;
+					margin-top: 1.8rem;
+				}
+				h2 {
+					font-size: 2rem;
+				}
+				ol {
+					li {
+						&::marker {
+							font-size: 1.8rem;
+						}
+						span {
+							font-size: 1.8rem;
+						}
+						ul {
+							li {
+								font-size: 1.5rem;
+							}
 						}
 					}
 				}
@@ -132,35 +142,38 @@
 	.btn {
 		padding: 0 1.2rem;
 	}
-	.modal {
-		.container {
-			.icon {
-				right: 0.8rem;
-				top: 0.8rem;
-				width: 2.5rem;
-				height: 2.5rem;
-			}
-			h1 {
-				font-size: 3.5rem;
-				margin-top: 3.5rem;
-			}
-			h2 {
-				font-size: 2.5rem;
-				margin-top: 1rem;
-			}
-			ol {
-				li {
-					margin: 0 0 0 2.2rem;
 
-					&::marker {
-						font-size: 2.1rem;
-					}
-					span {
-						font-size: 2.1rem;
-					}
-					ul {
-						li {
-							font-size: 1.8rem;
+	.overlay {
+		.modal {
+			.container {
+				.icon {
+					right: 0.8rem;
+					top: 0.8rem;
+					width: 2.5rem;
+					height: 2.5rem;
+				}
+				h1 {
+					font-size: 3.5rem;
+					margin-top: 3.5rem;
+				}
+				h2 {
+					font-size: 2.5rem;
+					margin-top: 1rem;
+				}
+				ol {
+					li {
+						margin: 0 0 0 2.2rem;
+
+						&::marker {
+							font-size: 2.1rem;
+						}
+						span {
+							font-size: 2.1rem;
+						}
+						ul {
+							li {
+								font-size: 1.8rem;
+							}
 						}
 					}
 				}
@@ -170,19 +183,23 @@
 }
 
 @media (min-width: 1200px) {
-	.modal {
-		top: 10%;
-		left: 10%;
-		right: 10%;
-		bottom: 10%;
+	.overlay {
+		.modal {
+			top: 10%;
+			left: 10%;
+			right: 10%;
+			bottom: 10%;
+		}
 	}
 }
 
 @media (min-width: 1400px) {
-	.modal {
-		top: 10%;
-		left: 15%;
-		right: 15%;
-		bottom: 10%;
+	.overlay {
+		.modal {
+			top: 10%;
+			left: 15%;
+			right: 15%;
+			bottom: 10%;
+		}
 	}
 }

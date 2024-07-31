@@ -32,7 +32,7 @@ export const Rules = () => {
 				Show rules
 			</button>
 			{isOpen && (
-				<div className="overlay" onClick={handleClose}>
+				<div className={styles.overlay} onClick={handleClose}>
 					<div className={`${styles.modal} ${isClosing ? styles.closing : ''}`}>
 						<div className={styles.container}>
 							<button type="button" onClick={handleClose}>

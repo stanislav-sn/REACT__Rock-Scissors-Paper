@@ -15,7 +15,10 @@ html[lang='ru'] .score {
 
 	.quantity {
 		@include flex-space-between;
-		font-size: 1.5rem;
+
+		& {
+			font-size: 1.5rem;
+		}
 
 		.gamer {
 			margin-right: 0.2rem;
@@ -29,8 +32,10 @@ html[lang='ru'] .score {
 		@include button;
 		@include border;
 
-		width: 100%;
-		margin-top: 0.5rem;
+		& {
+			width: 100%;
+			margin-top: 0.5rem;
+		}
 
 		&:hover {
 			@include button-hover;

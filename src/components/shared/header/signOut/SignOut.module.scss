@@ -1,8 +1,11 @@
-@import  '../../../../styles/mixins.scss';
+@import '../../../../styles/mixins.scss';
 .btn {
 	@include button;
 	@include border;
-	padding: 0 0.8rem;
+
+	& {
+		padding: 0 0.8rem;
+	}
 }
 
 .btn:hover {

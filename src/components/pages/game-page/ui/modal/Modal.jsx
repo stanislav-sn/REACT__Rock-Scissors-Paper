@@ -56,7 +56,7 @@ export const Modal = ({modalHandler, result, computerChoice, userChoice, handsLi
 	const userIcon = userHand ? userHand.icon : null;
 
 	return isOpen ? (
-		<div className="overlay" onClick={handleClose}>
+		<div className={styles.overlay} onClick={handleClose}>
 			<div
 				className={`${styles.modal} ${isClosing ? styles.close : ''}`}
 				onClick={handleClose}
