@@ -1,6 +1,5 @@
-const rulesData = [
+export const RULES_LIST = [
 	{
-		id: 'rule1',
 		title: 'Players:',
 		content: [
 			'User: Chooses a hand gesture by clicking on the corresponding button (Rock, Scissors, Paper).',
@@ -8,12 +7,10 @@ const rulesData = [
 		],
 	},
 	{
-		id: 'rule2',
 		title: 'Hand Gestures:',
 		content: ['Rock, Scissors, Paper - same as in the classic game.'],
 	},
 	{
-		id: 'rule3',
 		title: 'Determining the Winner:',
 		content: [
 			'Rock defeats Scissors.',
@@ -22,7 +19,6 @@ const rulesData = [
 		],
 	},
 	{
-		id: 'rule4',
 		title: 'Scoring:',
 		content: [
 			'After each round, if there is a winner, they receive +1 point in the Score field.',
@@ -30,14 +26,12 @@ const rulesData = [
 		],
 	},
 	{
-		id: 'rule5',
 		title: 'Resetting Scores:',
 		content: [
 			'The player can click the "Reset" button to reset the score and start anew.',
 		],
 	},
 	{
-		id: 'rule6',
 		title: 'Gameplay:',
 		content: [
 			'The player selects their hand gesture.',
@@ -48,7 +42,6 @@ const rulesData = [
 		],
 	},
 	{
-		id: 'rule7',
 		title: 'Ending the Game and Progress Saving:',
 		content: [
 			'The game can continue indefinitely.',
@@ -57,7 +50,6 @@ const rulesData = [
 		],
 	},
 	{
-		id: 'rule8',
 		title: 'Interface:',
 		content: [
 			'Buttons for choosing hand gestures (Rock, Scissors, Paper).',
@@ -66,5 +58,3 @@ const rulesData = [
 		],
 	},
 ];
-
-export default rulesData;

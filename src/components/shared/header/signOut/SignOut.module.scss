@@ -1,0 +1,22 @@
+@import  '../../../../styles/mixins.scss';
+.btn {
+	@include button;
+	@include border;
+	padding: 0 0.8rem;
+}
+
+.btn:hover {
+	@include button-hover;
+}
+
+@media (min-width: 576px) {
+	.btn {
+		padding: 0 0.9rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.btn {
+		padding: 0 1.2rem;
+	}
+}

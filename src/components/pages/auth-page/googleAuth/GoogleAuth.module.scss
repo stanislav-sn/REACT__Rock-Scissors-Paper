@@ -1,0 +1,40 @@
+@import '../../../../styles/mixins.scss';
+
+.btn {
+	@include flex-all-center;
+	@include border;
+	border-radius: 10px;
+	font-family: var(--font-lowercase);
+	font-size: 1.29rem;
+	height: 3.2rem;
+	width: 19rem;
+	margin-bottom: 0.1rem;
+
+	.icon {
+		width: 1.9rem;
+		margin-right: 0.6rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.btn {
+		height: 3.3rem;
+		font-size: 1.4rem;
+
+		.icon {
+			width: 2.1rem;
+			margin-right: 0.6rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.btn {
+		font-size: 1.5rem;
+
+		.icon {
+			width: 1.9rem;
+			margin-right: 0.6rem;
+		}
+	}
+}

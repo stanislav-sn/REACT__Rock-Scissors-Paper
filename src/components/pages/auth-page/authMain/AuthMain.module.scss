@@ -1,0 +1,78 @@
+@import '../../../../styles/mixins.scss';
+
+@keyframes animation {
+	from {
+		transform: translateY(-50%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+.wrapper {
+	@include flex-vertical-center;
+	animation: animation 0.4s ease-out;
+	// padding-bottom: 15%;
+	height: 80vh;
+	min-height: 30rem;
+
+	.centeredWrapper {
+		@include flex-horizontal-center;
+
+		.formWrapper {
+			@include flex-vertical-center-column;
+
+			.handle {
+				@include flex-vertical-center-column;
+				margin-top: 1.4rem;
+				font-size: 1.3rem;
+
+				p {
+					text-transform: none;
+				}
+				button {
+					font-size: 1.4rem;
+					text-decoration: underline;
+					text-transform: uppercase;
+				}
+			}
+		}
+		.divider {
+			@include flex-vertical-center-column;
+
+			margin: 0 2rem;
+
+			.bar {
+				background-color: var(--text-color);
+				width: 0.25rem;
+				height: 50%;
+			}
+			span {
+				font-size: 1.5rem;
+				padding: 1rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.handle {
+		margin-top: 1.5rem;
+		font-size: 1.4rem;
+
+		button {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.handle {
+		margin-top: 1.5rem;
+		font-size: 1.5rem;
+
+		button {
+			font-size: 1.6rem;
+		}
+	}
+}

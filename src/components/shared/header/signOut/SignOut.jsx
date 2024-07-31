@@ -1,8 +1,7 @@
 import { signOut } from 'firebase/auth';
-import classNames from 'classnames';
 import { auth } from '../../../../firebase';
 import { handleError } from '../../../../utils/handleError';
-import styles from './SignOut.module.css';
+import styles from './SignOut.module.scss';
 
 export const SignOut = () => {
 	const userSignOut = async () => {
@@ -16,11 +15,7 @@ export const SignOut = () => {
 
 	return (
 		<div className={styles.box}>
-			<button
-				type="button"
-				className={classNames(styles.btn, 'appButtons', 'border')}
-				onClick={userSignOut}
-			>
+			<button type="button" className={styles.btn} onClick={userSignOut}>
 				Sign Out
 			</button>
 		</div>

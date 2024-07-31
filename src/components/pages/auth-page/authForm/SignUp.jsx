@@ -2,13 +2,12 @@ import { useMemo } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import { ToastContainer, toast } from 'react-toastify';
-import classNames from 'classnames';
 import { auth, database } from '../../../../firebase';
-import { AuthInput } from './AuthInput';
+import { AuthInput } from './authInput/AuthInput';
 import { useForm } from '../../../../hooks/useForm';
 import { handleError } from '../../../../utils/handleError';
 import { SIGNUP_FORM_LIST } from '../../../../data/formConfig-data';
-import styles from './Auth.module.css';
+import styles from './AuthForm.module.scss';
 
 const initialState = {
 	name: { value: '', isValid: false },
@@ -85,16 +84,11 @@ export const SignUp = () => {
 	);
 
 	return (
-		<div
-			className={classNames(styles.formContainer, 'flexVerticalCenteredColumn')}
-		>
+		<div className={styles.formContainer}>
 			<h2>Create Account</h2>
-			<form
-				className={classNames(styles.form, 'flexVerticalCenteredColumn')}
-				onSubmit={handleSubmit}
-			>
+			<form className={styles.form} onSubmit={handleSubmit}>
 				{formList}
-				<button type="submit" className={classNames('appButtons', 'border')}>
+				<button type="submit" className={styles.btn}>
 					Sign Up
 				</button>
 			</form>

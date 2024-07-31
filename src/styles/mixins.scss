@@ -1,0 +1,56 @@
+@mixin border {
+	border: 2px solid var(--border-color);
+}
+
+@mixin button {
+	font-size: 1.5rem;
+	width: auto;
+	height: 3rem;
+	border-radius: 10px;
+	text-transform: uppercase;
+	transition: 0.3s ease;
+
+	@media (min-width: 768px) {
+		font-size: 1.6rem;
+		height: 3.1rem;
+	}
+}
+
+@mixin button-hover {
+	color: var(--text-color-hover);
+	background-color: var(--btn-color-hover);
+}
+
+@mixin flex-space-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+@mixin flex-horizontal-center {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin flex-vertical-center {
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-vertical-center-column {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+@mixin flex-all-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-all-center-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

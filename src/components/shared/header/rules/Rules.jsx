@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import { IoCloseOutline } from 'react-icons/io5';
-import classNames from 'classnames';
-import rulesData from '../../../../data/rules';
-import styles from './Rules.module.css';
+import { nanoid } from 'nanoid';
+import { RULES_LIST } from '../../../../data/rules-data';
+import styles from './Rules.module.scss';
 
 export const Rules = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -28,22 +28,12 @@ export const Rules = () => {
 
 	return (
 		<>
-			<button
-				type="button"
-				className={classNames(styles.btn, 'appButtons', 'border')}
-				onClick={toggleRules}
-			>
+			<button type="button" className={styles.btn} onClick={toggleRules}>
 				Show rules
 			</button>
 			{isOpen && (
 				<div className="overlay" onClick={handleClose}>
-					<div
-						className={classNames(
-							styles.modal,
-							{ [styles.closing]: isClosing },
-							'border'
-						)}
-					>
+					<div className={`${styles.modal} ${isClosing ? styles.closing : ''}`}>
 						<div className={styles.container}>
 							<button type="button" onClick={handleClose}>
 								<IoCloseOutline className={styles.icon} />
@@ -51,12 +41,12 @@ export const Rules = () => {
 							<h1>Rock, Paper, Scissors - Against the Computer</h1>
 							<h2>Rules:</h2>
 							<ol>
-								{rulesData.map((rule) => (
-									<li key={rule.id}>
+								{RULES_LIST.map((rule) => (
+									<li key={nanoid()}>
 										<span>{rule.title}</span>
 										<ul>
 											{rule.content.map((contentItem) => (
-												<li key={rule.id}>{contentItem}</li>
+												<li key={nanoid()}>{contentItem}</li>
 											))}
 										</ul>
 									</li>

@@ -1,3 +1,5 @@
+@import './styles/mixins.scss';
+
 @font-face {
 	font-family: 'Bebas Neue Pro';
 	font-style: normal;
@@ -50,6 +52,7 @@
 }
 
 body {
+	@include flex-horizontal-center;
 	background-color: var(--theme);
 	font-family: var(--font-uppercase);
 	text-transform: uppercase;
@@ -92,6 +95,10 @@ svg {
 	height: auto;
 }
 
+img:not([alt]) {
+	border: 5px solid red;
+}
+
 address {
 	font-style: normal;
 }
@@ -115,7 +122,6 @@ input::-ms-clear {
 button,
 input[type='submit'] {
 	display: inline-block;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	background-color: transparent;
 	background: none;
@@ -147,54 +153,6 @@ h1 {
 	text-align: center;
 }
 
-.container {
-	height: 100vh;
-	display: grid;
-	grid-template-rows: auto 1fr;
-	justify-items: center;
-}
-
-.border {
-	border: 2px solid var(--border-color);
-}
-
-.flexSpaceBetween {
-	display: flex;
-	justify-content: space-between;
-}
-
-.flexHorizontalCentered {
-	display: flex;
-	justify-content: center;
-}
-
-.flexVerticalCentered {
-	display: flex;
-	align-items: center;
-}
-
-.flexVerticalCenteredColumn {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
-
-.flexAllCentered {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.flexAllCenteredColumn {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 .overlay {
 	position: fixed;
 	width: 100%;
@@ -213,65 +171,49 @@ h1 {
 	--theme: #404040;
 }
 
-.game {
+.container {
 	width: 100%;
+	max-width: 34rem;
+	padding: 0 1.25rem;
+	height: 100vh;
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 0.7fr 1fr;
-	grid-template-areas:
-		'Score . .'
-		'Hands Hands Hands';
-}
+	grid-template-rows: auto 1fr;
+	justify-items: center;
 
-@media (min-width: 320px) {
-	.container {
+	.game {
 		width: 100%;
-		max-width: 30rem;
-		padding: 0 0.5rem;
-	}
-	.appButtons {
-		font-size: 1.2rem;
-		width: auto;
-		height: 2.35rem;
-		border-radius: 10px;
-		text-transform: uppercase;
-		transition: 0.3s ease;
-	}
-	.appButtons:hover {
-		color: var(--text-color-hover);
-		background-color: var(--btn-color-hover);
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.7fr 1fr;
+		grid-template-areas:
+			'Score . .'
+			'Hands Hands Hands';
 	}
 }
 
-@media (min-width: 428px) {
+@media (min-width: 576px) {
 	.container {
-		max-width: 34rem;
 		padding: 0 1.25rem;
 	}
-	.appButtons {
-		font-size: 1.2rem;
-	}
 }
-
 @media (min-width: 768px) {
 	.container {
 		width: 90vw;
 		max-width: 46.9rem;
 	}
-	.appButtons {
-		font-size: 1.6rem;
-		height: 3.1rem;
-	}
 }
-
 @media (min-width: 992px) {
 	.container {
 		max-width: 49.4rem;
 	}
 }
-
 @media (min-width: 1200px) {
 	.container {
 		max-width: 53.1rem;
+	}
+}
+@media (min-width: 1400px) {
+	.container {
+		max-width: 56.9rem;
 	}
 }

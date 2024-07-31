@@ -6,7 +6,7 @@ import { Modal } from '../../modal/Modal';
 import rock from '../../../../../../assets/rock.svg';
 import scissors from '../../../../../../assets/scissors.svg';
 import paper from '../../../../../../assets/paper.svg';
-import styles from './Hands.module.css';
+import styles from './Hands.module.scss';
 
 const HANDS_LIST = [
 	{
@@ -109,7 +109,7 @@ export const Hands = memo(() => {
 					modalHandler={() => clear()}
 				/>
 			)}
-			<ul className="flexSpaceBetween">
+			<ul>
 				{HANDS_LIST.map((hand) => (
 					<HandItem
 						key={hand.id}

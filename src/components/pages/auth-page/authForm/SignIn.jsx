@@ -2,15 +2,14 @@ import { useMemo } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import classNames from 'classnames';
 import { auth } from '../../../../firebase';
 import { GoogleAuth } from '../googleAuth/GoogleAuth';
-import { AuthInput } from './AuthInput';
+import { AuthInput } from './authInput/AuthInput';
 import { useForm } from '../../../../hooks/useForm';
 import { handleError } from '../../../../utils/handleError';
 import { SIGNIN_FORM_LIST } from '../../../../data/formConfig-data';
 import 'react-toastify/dist/ReactToastify.css';
-import styles from './Auth.module.css';
+import styles from './AuthForm.module.scss';
 
 const initialState = {
 	email: { value: '', isValid: false },
@@ -48,21 +47,16 @@ export const SignIn = () => {
 	);
 
 	return (
-		<div
-			className={classNames(styles.formContainer, 'flexVerticalCenteredColumn')}
-		>
+		<div className={styles.formContainer}>
 			<h2>Log In</h2>
 			<GoogleAuth />
 			<span>OR</span>
-			<form
-				className={classNames(styles.form, 'flexVerticalCenteredColumn')}
-				onSubmit={handleSubmit}
-			>
+			<form className={styles.form} onSubmit={handleSubmit}>
 				{formList}
 				<Link className={styles.forgotPassword} to="/forgot-password">
 					Forgot Password?
 				</Link>
-				<button type="submit" className={classNames('appButtons', 'border')}>
+				<button type="submit" className={styles.btn}>
 					Log In
 				</button>
 			</form>

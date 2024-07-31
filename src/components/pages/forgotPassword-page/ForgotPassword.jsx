@@ -2,14 +2,13 @@ import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
-import classNames from 'classnames';
 import { auth } from '../../../firebase';
-import { AuthInput } from '../auth-page/authForm/AuthInput';
+import { AuthInput } from '../auth-page/authForm/authInput/AuthInput';
 import { useForm } from '../../../hooks/useForm';
 import { handleError } from '../../../utils/handleError';
 import { FORGOT_PASSWORD_FORM_LIST } from '../../../data/formConfig-data';
 import 'react-toastify/dist/ReactToastify.css';
-import styles from './ForgotPassword.module.css';
+import styles from './ForgotPassword.module.scss';
 
 const initialState = {
 	email: { value: '', isValid: false },
@@ -53,25 +52,15 @@ export const ForgotPassword = () => {
 	);
 
 	return (
-		<div className={classNames(styles.wrapper, 'flexAllCenteredColumn')}>
-			<h1>Forgot Password</h1>
-			<form
-				className={classNames(styles.form, 'flexVerticalCenteredColumn')}
-				onSubmit={handleSubmit}
-			>
+		<div className={styles.formContainer}>
+			<h2>Forgot Password</h2>
+			<form className={styles.form} onSubmit={handleSubmit}>
 				{formList}
-				<button
-					className={classNames(styles.btn, 'appButtons', 'border')}
-					type="submit"
-				>
+				<button className={styles.btn} type="submit">
 					Reset Password
 				</button>
 			</form>
-			<button
-				type="button"
-				className={classNames(styles.btn, 'appButtons', 'border')}
-				onClick={handleLinkBack}
-			>
+			<button type="button" className={styles.btn} onClick={handleLinkBack}>
 				Back
 			</button>
 			<ToastContainer className={styles.toastContainer} />

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import classNames from 'classnames';
 import { SignIn } from '../authForm/SignIn';
 import { SignUp } from '../authForm/SignUp';
-import styles from './AuthMain.module.css';
+import styles from './AuthMain.module.scss';
 
 export const Auth = () => {
 	const [isSignUp, setIsSignUp] = useState(false);
@@ -12,12 +11,12 @@ export const Auth = () => {
 	const handleToggle = () => setIsSignUp((prevIsSignUp) => !prevIsSignUp);
 
 	return (
-		<main className={classNames(styles.wrapper, 'flexVerticalCentered')}>
-			<div className="flexHorizontalCentered">
+		<main className={styles.wrapper}>
+			<div className={styles.centeredWrapper}>
 				{isMobile ? (
-					<div className="flexVerticalCenteredColumn">
+					<div className={styles.formWrapper}>
 						{isSignUp ? <SignUp /> : <SignIn />}
-						<div className={classNames(styles.handle, 'flexVerticalCenteredColumn')}>
+						<div className={styles.handle}>
 							<p>
 								{isSignUp ? 'Already have an account?' : 'Need an account?'}
 							</p>
@@ -29,7 +28,7 @@ export const Auth = () => {
 				) : (
 					<>
 						<SignIn />
-						<div className={classNames(styles.divider, 'flexVerticalCenteredColumn')}>
+						<div className={styles.divider}>
 							<div className={styles.bar} />
 							<span>OR</span>
 							<div className={styles.bar} />

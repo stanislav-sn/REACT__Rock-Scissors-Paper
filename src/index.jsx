@@ -8,6 +8,7 @@ import {
 	useNavigate,
 } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
+import { nanoid } from 'nanoid';
 import { auth } from './firebase';
 import Game from './components/pages/game-page/Game';
 import { Auth } from './components/pages/auth-page/authMain/AuthMain';
@@ -16,7 +17,7 @@ import { ThemeProvider } from './providers/ThemeProvider';
 import { Header } from './components/shared/header/Header';
 import { UserProvider } from './providers/UserProvider';
 import { Loading } from './components/shared/loading/Loading';
-import './index.css';
+import './index.scss';
 
 const Main = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -62,7 +63,7 @@ const Main = () => {
 			<Header auth={auth} />
 			<Routes>
 				{routes.map((route) => (
-					<Route key={route.path} {...route} />
+					<Route key={nanoid()} {...route} />
 				))}
 			</Routes>
 		</div>

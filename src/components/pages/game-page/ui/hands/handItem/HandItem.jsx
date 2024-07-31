@@ -1,4 +1,4 @@
-import styles from './HandItem.module.css';
+import styles from './HandItem.module.scss';
 
 export const HandItem = ({ id, icon, name, onHandClick }) => {
 	return (

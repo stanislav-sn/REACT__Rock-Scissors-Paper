@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
-import classNames from 'classnames';
 import { UserContext } from '../../../../../providers/UserProvider';
-import styles from './Modal.module.css';
+import styles from './Modal.module.scss';
 
 export const Modal = ({modalHandler, result, computerChoice, userChoice, handsList}) => {
 	const { statsDB } = useContext(UserContext);
@@ -59,7 +58,7 @@ export const Modal = ({modalHandler, result, computerChoice, userChoice, handsLi
 	return isOpen ? (
 		<div className="overlay" onClick={handleClose}>
 			<div
-				className={classNames(styles.modal, {[styles.close]: isClosing}, 'border')}
+				className={`${styles.modal} ${isClosing ? styles.close : ''}`}
 				onClick={handleClose}
 			>
 				<h1>{result}</h1>

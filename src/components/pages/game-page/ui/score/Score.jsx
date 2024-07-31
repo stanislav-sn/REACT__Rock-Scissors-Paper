@@ -1,10 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { update } from 'firebase/database';
-import classNames from 'classnames';
 import { Loading } from '../../../../shared/loading/Loading';
 import { UserContext } from '../../../../../providers/UserProvider';
-import '../../../../../index.css';
-import styles from './Score.module.css';
+import styles from './Score.module.scss';
 
 export const Score = () => {
 	const contextAPI = useContext(UserContext);
@@ -49,18 +47,18 @@ export const Score = () => {
 	return (
 		<div className={styles.score}>
 			<div className={styles.title}>SCORE</div>
-			<div className={classNames(styles.quantity, 'flexSpaceBetween')}>
+			<div className={styles.quantity}>
 				<div className={styles.gamer}>{userName}:</div>
 				<span>{userScore}</span>
 			</div>
-			<div className={classNames(styles.quantity, 'flexSpaceBetween')}>
+			<div className={styles.quantity}>
 				<div className={styles.gamer}>Computer:</div>
 				<span>{computerScore}</span>
 			</div>
 			<button
 				type="button"
 				onClick={handleReset}
-				className={classNames(styles.reset, 'appButtons', 'border')}
+				className={styles.reset}
 			>
 				Reset
 			</button>

@@ -1,0 +1,34 @@
+@import '../../../styles/mixins.scss';
+
+@keyframes show-up {
+	from,
+	0% {
+		opacity: 0;
+	}
+	to,
+	100% {
+		opacity: 1;
+	}
+}
+
+html[lang='ru'] .header {
+	h1 {
+		font-size: clamp(1.9rem, calc(1.3rem + 3.2vw), 3.7rem);
+	}
+}
+
+.header {
+	width: 100%;
+
+	.buttons {
+		@include flex-vertical-center;
+		justify-content: end;
+		padding: 0.6rem 0.1rem;
+	}
+
+	h1 {
+		animation: show-up 1s ease-in-out;
+		font-size: clamp(2.6rem, calc(1.75rem + 3vw), 4rem);
+		line-height: 0.75;
+	}
+}

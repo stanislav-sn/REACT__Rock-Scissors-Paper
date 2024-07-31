@@ -1,11 +1,10 @@
 import { ThreeDots } from 'react-loader-spinner';
-import classNames from 'classnames';
-import styles from './Loading.module.css';
+import styles from './Loading.module.scss';
 
 export const Loading = () => {
 	return (
 		<div className={styles.container}>
-			<div className={classNames(styles.loading, 'flexVerticalCenteredColumn')}>
+			<div className={styles.loading}>
 				<ThreeDots color="var(--text-color)" ariaLabel="three-dots-loading" />
 				<p>Loading</p>
 			</div>

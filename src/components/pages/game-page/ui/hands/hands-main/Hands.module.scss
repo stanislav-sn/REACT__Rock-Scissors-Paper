@@ -1,0 +1,56 @@
+@import '../../../../../../styles/mixins.scss';
+
+.hands {
+	align-self: center;
+	grid-area: Hands;
+	cursor: pointer;
+	h2 {
+		text-align: center;
+		margin-bottom: 1rem;
+		font-size: 1.4rem;
+	}
+	ul {
+		@include flex-space-between;
+
+		li {
+			transition: transform 0.2s;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.hands {
+		h2 {
+			margin-bottom: 1.3rem;
+			font-size: 1.7rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.hands {
+		ul {
+			gap: 1.5rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.hands {
+		ul {
+			li:hover {
+				transform: scale(1.1);
+				z-index: 1;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.hands {
+		h2 {
+			margin-bottom: 1rem;
+			font-size: 2rem;
+		}
+	}
+}

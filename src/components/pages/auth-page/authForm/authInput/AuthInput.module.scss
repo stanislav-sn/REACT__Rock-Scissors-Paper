@@ -1,0 +1,73 @@
+@import '../../../../../styles/mixins.scss';
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translate(-2px, 0);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		transform: translate(2px, 0);
+	}
+}
+
+.inputBox {
+	position: relative;
+	width: 19rem;
+	height: auto;
+	min-height: 4.5rem;
+
+	input {
+		@include border;
+		border-radius: 10px;
+		font-family: var(--font-lowercase);
+		font-size: 1.15rem;
+		padding: 0 0.6rem;
+		position: relative;
+		width: 100%;
+		height: 3.2rem;
+	}
+	.inputError {
+		animation: shake 0.3s ease-in-out;
+		border: 2px solid var(--error-color);
+	}
+	.errorMessage {
+		color: var(--error-color);
+		text-transform: none;
+		font-family: var(--font-lowercase);
+		font-size: 0.97rem;
+	}
+	.togglePasswordIcon {
+		position: absolute;
+		top: 0.9rem;
+		right: 0.9rem;
+		width: 1.8rem;
+	}
+}
+
+@media (min-width: 576px) {
+	.inputBox {
+		height: auto;
+		min-height: 4.7rem;
+		width: 19rem;
+
+		input {
+			height: 3.3rem;
+			font-size: 1.23rem;
+		}
+		.errorMessage {
+			font-size: 1.04rem;
+		}
+		.togglePasswordIcon {
+			width: 1.9rem;
+		}
+	}
+}

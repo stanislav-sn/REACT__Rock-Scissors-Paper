@@ -2,15 +2,10 @@
 	margin-top: 1rem;
 	text-align: center;
 	text-transform: uppercase;
+	font-size: 1.9rem;
 }
 
-@media (min-width: 320px) {
-	.name {
-		font-size: 1.8rem;
-	}
-}
-
-@media (min-width: 428px) {
+@media (min-width: 576px) {
 	html[lang='ru'] .name {
 		font-size: 2.1rem;
 	}

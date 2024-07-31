@@ -1,0 +1,20 @@
+@import '../../../../styles/mixins.scss';
+
+.theme {
+	@include flex-all-center;
+	
+	svg {
+		width: 1.875rem;
+		height: 1.875rem;
+		transition: 0.3s ease;
+		border-radius: 1rem;
+	}
+}
+.light:hover {
+	background-color: var(--light-theme-button-hover);
+	box-shadow: 0 0 0.27rem 0.2rem var(--light-theme-button-hover);
+}
+.dark:hover {
+	background-color: var(--dark-theme-button-hover);
+	box-shadow: 0 0 0.27rem 0.2rem #a8a8a8a1;
+}
