@@ -1,4 +1,4 @@
-<img width="50%" alt="RSP-game" src="https://github.com/stanislav-sn/REACT__Rock-Scissors-Paper/assets/69680178/f53065ec-5843-4acc-b35a-b874b2a0ba2a" />
+<img width="50%" alt="RSP-game" src="https://github.com/user-attachments/assets/9c3c23ed-c031-452f-948a-55fa3b1273e5" />
 
 # React - Rock-Scissors-Paper
 
@@ -22,5 +22,6 @@ This project was created with:
 - React
 - JavaScript
 - HTML
-- CSS
+- SCSS
 - Firebase
+- Jest
